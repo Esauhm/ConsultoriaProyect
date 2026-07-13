@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Dx7jFg9yXgU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Elizabeth Hernández\\Desktop\\Consultoria\\src\\Consultoria.Api\\Consultoria.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Elizabeth Hernández\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.9\\microsoft.aspnetcore.openapi.10.0.9.nupkg.sha512",
+    "C:\\Users\\Elizabeth Hernández\\.nuget\\packages\\microsoft.openapi\\3.8.0\\microsoft.openapi.3.8.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Consultoria.Api/Consultoria.Api.csproj" />
+    <Project Path="src/Consultoria.Application/Consultoria.Application.csproj" />
+    <Project Path="src/Consultoria.Domain/Consultoria.Domain.csproj" />
+    <Project Path="src/Consultoria.Infrastructure/Consultoria.Infrastructure.csproj" />
+  </Folder>
+</Solution>

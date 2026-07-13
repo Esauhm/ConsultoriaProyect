@@ -1,0 +1,8 @@
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.csproj.AssemblyReference.cache
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.AssemblyInfoInputs.cache
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.AssemblyInfo.cs
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.csproj.CoreCompileInputs.cache
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.MvcApplicationPartsAssemblyInfo.cache
