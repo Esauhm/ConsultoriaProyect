@@ -28,3 +28,4 @@ C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Application\ob
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Application\obj\Debug\net10.0\refint\Consultoria.Application.dll
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Application\obj\Debug\net10.0\Consultoria.Application.pdb
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Application\obj\Debug\net10.0\ref\Consultoria.Application.dll
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Application\obj\Debug\net10.0\Consultoria.Application.sourcelink.json

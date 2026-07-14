@@ -6,3 +6,4 @@ C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.csproj.CoreCompileInputs.cache
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Api\obj\Debug\net10.0\Consultoria.Api.sourcelink.json

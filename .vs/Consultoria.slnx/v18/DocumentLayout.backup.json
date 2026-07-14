@@ -3,6 +3,70 @@
   "WorkspaceRootPath": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C16D9334-D887-166B-2857-60244A07434B}|src\\Consultoria.Application\\Consultoria.Application.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.application\\interfaces\\services\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C16D9334-D887-166B-2857-60244A07434B}|src\\Consultoria.Application\\Consultoria.Application.csproj|solutionrelative:src\\consultoria.application\\interfaces\\services\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\authentication\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\authentication\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\caching\\memorycacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\caching\\memorycacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\authentication\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\authentication\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\authentication\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\authentication\\jwtsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\repositories\\reporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\repositories\\reporterepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\repositories\\paqueteserviciorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\repositories\\paqueteserviciorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\repositories\\consultorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\repositories\\consultorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\configurations\\usuarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\configurations\\usuarioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\configurations\\paqueteservicioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\configurations\\paqueteservicioconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\configurations\\consultorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\configurations\\consultorconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\configurations\\areaespecializacionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\configurations\\areaespecializacionconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\consultoria.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\consultoria.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.infrastructure\\persistence\\context\\consultoriadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55591F16-2EC4-D0A0-B358-DD34184C5E03}|src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj|solutionrelative:src\\consultoria.infrastructure\\persistence\\context\\consultoriadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C16D9334-D887-166B-2857-60244A07434B}|src\\Consultoria.Application\\Consultoria.Application.csproj|c:\\users\\elizabeth hern\u00E1ndez\\desktop\\consultoria\\src\\consultoria.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C16D9334-D887-166B-2857-60244A07434B}|src\\Consultoria.Application\\Consultoria.Application.csproj|solutionrelative:src\\consultoria.application\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,37 +102,245 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IPasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Interfaces\\Services\\IPasswordHasher.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Application\\Interfaces\\Services\\IPasswordHasher.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Interfaces\\Services\\IPasswordHasher.cs",
+              "RelativeToolTip": "src\\Consultoria.Application\\Interfaces\\Services\\IPasswordHasher.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwAoAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T18:34:20.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\DependencyInjection.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\DependencyInjection.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\DependencyInjection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T18:25:49.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MemoryCacheService.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Caching\\MemoryCacheService.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Caching\\MemoryCacheService.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Caching\\MemoryCacheService.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Caching\\MemoryCacheService.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAADwvz4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:25:49.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtTokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Authentication\\JwtTokenService.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Authentication\\JwtTokenService.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Authentication\\JwtTokenService.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Authentication\\JwtTokenService.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAADwv34AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:23:34.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "JwtSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Authentication\\JwtSettings.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Authentication\\JwtSettings.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Authentication\\JwtSettings.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Authentication\\JwtSettings.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAADwvxEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:21:50.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Authentication\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Authentication\\PasswordHasher.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Authentication\\PasswordHasher.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Authentication\\PasswordHasher.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADwvykAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T17:19:16.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReporteRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ReporteRepository.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ReporteRepository.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ReporteRepository.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ReporteRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAALsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T16:54:36.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowBYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T16:51:06.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PaqueteServicioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\PaqueteServicioRepository.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\PaqueteServicioRepository.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\PaqueteServicioRepository.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\PaqueteServicioRepository.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAADwv5oAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T16:44:32.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ConsultorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ConsultorRepository.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ConsultorRepository.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ConsultorRepository.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Repositories\\ConsultorRepository.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAADwv68AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T16:39:55.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UsuarioConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\UsuarioConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\UsuarioConfiguration.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\UsuarioConfiguration.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\UsuarioConfiguration.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAADwvzoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T16:05:03.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PaqueteServicioConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\PaqueteServicioConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\PaqueteServicioConfiguration.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\PaqueteServicioConfiguration.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\PaqueteServicioConfiguration.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAADwv10AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T16:03:31.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ConsultorConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\ConsultorConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\ConsultorConfiguration.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\ConsultorConfiguration.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\ConsultorConfiguration.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAADwv0gAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T15:44:13.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AreaEspecializacionConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\AreaEspecializacionConfiguration.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\AreaEspecializacionConfiguration.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Configurations\\AreaEspecializacionConfiguration.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Configurations\\AreaEspecializacionConfiguration.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAswB4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T15:40:46.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ConsultoriaDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Context\\ConsultoriaDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Persistence\\Context\\ConsultoriaDbContext.cs",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Persistence\\Context\\ConsultoriaDbContext.cs",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Persistence\\Context\\ConsultoriaDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-14T15:05:53.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Consultoria.Infrastructure",
+              "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj",
+              "RelativeToolTip": "src\\Consultoria.Infrastructure\\Consultoria.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-14T14:57:43.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\DependencyInjection.cs",
               "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\DependencyInjection.cs",
               "RelativeToolTip": "src\\Consultoria.Application\\DependencyInjection.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAADwvx4AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-14T14:30:44.011Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 17,
               "Title": "ReporteService.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Services\\ReporteService.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\Services\\ReporteService.cs",
               "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Services\\ReporteService.cs",
               "RelativeToolTip": "src\\Consultoria.Application\\Services\\ReporteService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAKYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwKYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-14T14:25:12.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 18,
               "Title": "ICacheService.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Interfaces\\Services\\ICacheService.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\Interfaces\\Services\\ICacheService.cs",
@@ -81,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 19,
               "Title": "PaqueteServicioService.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Services\\PaqueteServicioService.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\Services\\PaqueteServicioService.cs",
@@ -94,20 +366,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 20,
               "Title": "ConsultorService.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Services\\ConsultorService.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\Services\\ConsultorService.cs",
               "ToolTip": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Services\\ConsultorService.cs",
               "RelativeToolTip": "src\\Consultoria.Application\\Services\\ConsultorService.cs",
-              "ViewState": "AgIAAMIAAAAAAAAAAAAswM0AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAMIAAAAAAAAAAAA7wM0AAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-14T14:10:53.035Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 21,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\Services\\AuthService.cs",
@@ -120,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 22,
               "Title": "UnauthorizedException.cs",
               "DocumentMoniker": "C:\\Users\\Elizabeth Hern\u00E1ndez\\Desktop\\Consultoria\\src\\Consultoria.Application\\Common\\Exceptions\\UnauthorizedException.cs",
               "RelativeDocumentMoniker": "src\\Consultoria.Application\\Common\\Exceptions\\UnauthorizedException.cs",
