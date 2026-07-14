@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Consultoria.Application.Common.Exceptions
 {
-    internal class UnauthorizedException
+    public sealed class UnauthorizedException : Exception
     {
+        public UnauthorizedException(string message)
+            : base(message)
+        {
+        }
     }
 }
