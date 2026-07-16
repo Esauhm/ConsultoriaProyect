@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("e186b355-d5d8-440c-a440-7d3fba080ef5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Consultoria.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37cc414987c929373999e501da7645b04069837e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb86a8cd99ca7636d1ccd403872f18fa2e5b64e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("Consultoria.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Consultoria.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
