@@ -22,6 +22,10 @@ namespace Consultoria.Infrastructure.Persistence.Configurations
                         "[DuracionHoras] > 0");
 
                     tableBuilder.HasCheckConstraint(
+                        "CK_PaquetesServicio_TarifaHoraAplicada",
+                        "[TarifaHoraAplicada] > 0");
+
+                    tableBuilder.HasCheckConstraint(
                         "CK_PaquetesServicio_Costo",
                         "[Costo] > 0");
                 });
@@ -44,9 +48,13 @@ namespace Consultoria.Infrastructure.Persistence.Configurations
             builder.Property(x => x.DuracionHoras)
                 .IsRequired();
 
-            builder.Property(x => x.Costo)
-                .IsRequired()
-                .HasPrecision(12, 2);
+            builder.Property(paquete => paquete.TarifaHoraAplicada)
+                .HasPrecision(18, 2)
+                .IsRequired();
+
+            builder.Property(paquete => paquete.Costo)
+                .HasPrecision(18, 2)
+                .IsRequired();
 
             builder.Property(x => x.Descripcion)
                 .HasMaxLength(500);

@@ -30,6 +30,18 @@ namespace Consultoria.Domain.Entities
             Nombre = nombre.Trim();
         }
 
+        public void ActualizarNombre(string nombre)
+        {
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                throw new ArgumentException(
+                    "El nombre del área es obligatorio.",
+                    nameof(nombre));
+            }
+
+            Nombre = nombre.Trim();
+        }
+
         public void Activar()
         {
             Activo = true;

@@ -32,6 +32,10 @@ namespace Consultoria.Application
                 LoginRequestValidator>(
                     ServiceLifetime.Scoped);
 
+            services.AddScoped<
+                IAreaEspecializacionService,
+                AreaEspecializacionService>();
+
             return services;
         }
     }

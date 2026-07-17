@@ -1,12 +1,13 @@
-using System.Security.Claims;
-using System.Text;
+using Consultoria.Api.Filters;
+using Consultoria.Api.Middleware;
+using Consultoria.Api.OpenApi;
 using Consultoria.Application;
 using Consultoria.Infrastructure;
 using Consultoria.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using Consultoria.Api.Middleware;
-using Consultoria.Api.Filters;
+using System.Security.Claims;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +26,14 @@ builder.Services.AddControllers(options =>
 // 2. Documentación OpenAPI
 // ---------------------------------------------------------
 
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    options.AddDocumentTransformer<
+        BearerSecuritySchemeTransformer>();
+
+    options.AddOperationTransformer<
+        BearerSecurityRequirementTransformer>();
+});
 
 // ---------------------------------------------------------
 // 3. Capas de la aplicación

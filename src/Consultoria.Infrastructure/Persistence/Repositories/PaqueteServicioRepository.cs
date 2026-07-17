@@ -74,6 +74,7 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                     Consultor = consultor.Nombre,
 
                     DuracionHoras = paquete.DuracionHoras,
+                    TarifaHoraAplicada = paquete.TarifaHoraAplicada,
                     Costo = paquete.Costo,
                     Descripcion = paquete.Descripcion,
                     Activo = paquete.Activo,
@@ -113,6 +114,7 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                     Consultor = consultor.Nombre,
 
                     DuracionHoras = paquete.DuracionHoras,
+                    TarifaHoraAplicada = paquete.TarifaHoraAplicada,
                     Costo = paquete.Costo,
                     Descripcion = paquete.Descripcion,
                     Activo = paquete.Activo,

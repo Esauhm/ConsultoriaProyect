@@ -763,19 +763,19 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

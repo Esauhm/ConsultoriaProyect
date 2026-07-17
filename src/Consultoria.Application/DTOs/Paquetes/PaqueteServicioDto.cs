@@ -20,6 +20,8 @@ namespace Consultoria.Application.DTOs.Paquetes
 
         public int DuracionHoras { get; init; }
 
+        public decimal TarifaHoraAplicada { get; init; }
+
         public decimal Costo { get; init; }
 
         public string? Descripcion { get; init; }

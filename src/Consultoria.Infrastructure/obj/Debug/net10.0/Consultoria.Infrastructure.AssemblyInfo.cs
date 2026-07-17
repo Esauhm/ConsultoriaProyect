@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Consultoria.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb86a8cd99ca7636d1ccd403872f18fa2e5b64e8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab88d17a1f95e80ce1bc98e73d880579ec2c97c1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Consultoria.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Consultoria.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

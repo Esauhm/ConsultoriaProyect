@@ -14,15 +14,18 @@ namespace Consultoria.Application.Services
     {
         private readonly IPaqueteServicioRepository _paqueteRepository;
         private readonly IConsultorRepository _consultorRepository;
+        private readonly IAreaEspecializacionRepository _areaRepository;
         private readonly ILogger<PaqueteServicioService> _logger;
 
         public PaqueteServicioService(
             IPaqueteServicioRepository paqueteRepository,
             IConsultorRepository consultorRepository,
+            IAreaEspecializacionRepository areaRepository,
             ILogger<PaqueteServicioService> logger)
         {
             _paqueteRepository = paqueteRepository;
             _consultorRepository = consultorRepository;
+            _areaRepository = areaRepository;
             _logger = logger;
         }
 
@@ -30,34 +33,43 @@ namespace Consultoria.Application.Services
             CrearPaqueteServicioDto request,
             CancellationToken cancellationToken = default)
         {
-            await ValidarConsultorActivoAsync(
-                request.ConsultorId,
-                cancellationToken);
+            Consultor consultor =
+                await ObtenerConsultorValidoAsync(
+                    request.ConsultorId,
+                    cancellationToken);
 
             var paquete = new PaqueteServicio(
                 request.Nombre.Trim(),
-                request.AreaEspecializacionId,
-                request.ConsultorId,
+                consultor.AreaEspecializacionId,
+                consultor.ConsultorId,
                 request.DuracionHoras,
-                request.Costo,
-                request.Descripcion);
+                consultor.TarifaHora,
+                request.Descripcion.Trim());
 
-            int paqueteId = await _paqueteRepository.CrearAsync(
-                paquete,
-                cancellationToken);
+            int paqueteId =
+                await _paqueteRepository.CrearAsync(
+                    paquete,
+                    cancellationToken);
 
             _logger.LogInformation(
-                "Se creó el paquete de servicio {PaqueteId} asignado al consultor {ConsultorId}.",
+                "Se creó el paquete {PaqueteId} para el consultor {ConsultorId}. " +
+                "Área: {AreaEspecializacionId}, Tarifa aplicada: {TarifaHoraAplicada}, " +
+                "Duración: {DuracionHoras}, Costo: {Costo}.",
                 paqueteId,
-                request.ConsultorId);
+                consultor.ConsultorId,
+                consultor.AreaEspecializacionId,
+                consultor.TarifaHora,
+                request.DuracionHoras,
+                paquete.Costo);
 
             return await ObtenerPorIdAsync(
                 paqueteId,
                 cancellationToken);
         }
 
-        public async Task<IReadOnlyCollection<PaqueteServicioDto>> ObtenerTodosAsync(
-            CancellationToken cancellationToken = default)
+        public async Task<IReadOnlyCollection<PaqueteServicioDto>>
+            ObtenerTodosAsync(
+                CancellationToken cancellationToken = default)
         {
             return await _paqueteRepository.ObtenerTodosAsync(
                 cancellationToken);
@@ -99,25 +111,32 @@ namespace Consultoria.Application.Services
                     paqueteId);
             }
 
-            await ValidarConsultorActivoAsync(
-                request.ConsultorId,
-                cancellationToken);
+            Consultor consultor =
+                await ObtenerConsultorValidoAsync(
+                    request.ConsultorId,
+                    cancellationToken);
 
             paquete.Actualizar(
                 request.Nombre.Trim(),
-                request.AreaEspecializacionId,
-                request.ConsultorId,
+                consultor.AreaEspecializacionId,
+                consultor.ConsultorId,
                 request.DuracionHoras,
-                request.Costo,
-                request.Descripcion);
+                consultor.TarifaHora,
+                request.Descripcion.Trim());
 
             await _paqueteRepository.ActualizarAsync(
                 paquete,
                 cancellationToken);
 
             _logger.LogInformation(
-                "Se actualizó el paquete de servicio {PaqueteId}.",
-                paqueteId);
+                "Se actualizó el paquete {PaqueteId}. " +
+                "Consultor: {ConsultorId}, Área: {AreaEspecializacionId}, " +
+                "Tarifa aplicada: {TarifaHoraAplicada}, Costo: {Costo}.",
+                paqueteId,
+                consultor.ConsultorId,
+                consultor.AreaEspecializacionId,
+                consultor.TarifaHora,
+                paquete.Costo);
 
             return await ObtenerPorIdAsync(
                 paqueteId,
@@ -155,20 +174,41 @@ namespace Consultoria.Application.Services
                 paqueteId);
         }
 
-        private async Task ValidarConsultorActivoAsync(
+        private async Task<Consultor> ObtenerConsultorValidoAsync(
             int consultorId,
             CancellationToken cancellationToken)
         {
-            bool consultorActivo =
-                await _consultorRepository.ExisteActivoAsync(
+            Consultor? consultor =
+                await _consultorRepository.ObtenerEntidadPorIdAsync(
                     consultorId,
                     cancellationToken);
 
-            if (!consultorActivo)
+            if (consultor is null)
             {
                 throw new BusinessException(
-                    "El consultor seleccionado no existe o se encuentra inactivo.");
+                    $"El consultor con identificador {consultorId} no existe.");
             }
+
+            if (!consultor.Activo)
+            {
+                throw new BusinessException(
+                    $"El consultor con identificador {consultorId} " +
+                    "se encuentra inactivo.");
+            }
+
+            bool areaActiva =
+                await _areaRepository.ExisteActivaAsync(
+                    consultor.AreaEspecializacionId,
+                    cancellationToken);
+
+            if (!areaActiva)
+            {
+                throw new BusinessException(
+                    "El área de especialización asignada al consultor " +
+                    "no existe o se encuentra inactiva.");
+            }
+
+            return consultor;
         }
     }
 }

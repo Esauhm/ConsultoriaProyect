@@ -16,8 +16,8 @@ C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Deb
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.AssemblyInfoInputs.cache
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.AssemblyInfo.cs
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.sourcelink.json
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.dll
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\refint\Consultoria.Domain.dll
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.pdb
 C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\ref\Consultoria.Domain.dll
-C:\Users\Elizabeth Hernández\Desktop\Consultoria\src\Consultoria.Domain\obj\Debug\net10.0\Consultoria.Domain.sourcelink.json

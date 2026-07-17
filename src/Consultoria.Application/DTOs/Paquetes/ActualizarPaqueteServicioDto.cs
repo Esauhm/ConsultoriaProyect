@@ -8,14 +8,10 @@ namespace Consultoria.Application.DTOs.Paquetes
     {
         public string Nombre { get; init; } = string.Empty;
 
-        public int AreaEspecializacionId { get; init; }
-
         public int ConsultorId { get; init; }
 
         public int DuracionHoras { get; init; }
 
-        public decimal Costo { get; init; }
-
-        public string? Descripcion { get; init; }
+        public string Descripcion { get; init; } = string.Empty;
     }
 }

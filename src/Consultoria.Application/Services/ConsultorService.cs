@@ -13,13 +13,16 @@ namespace Consultoria.Application.Services
     public sealed class ConsultorService : IConsultorService
     {
         private readonly IConsultorRepository _consultorRepository;
+        private readonly IAreaEspecializacionRepository _areaRepository;
         private readonly ILogger<ConsultorService> _logger;
 
         public ConsultorService(
             IConsultorRepository consultorRepository,
+            IAreaEspecializacionRepository areaRepository,
             ILogger<ConsultorService> logger)
         {
             _consultorRepository = consultorRepository;
+            _areaRepository = areaRepository;
             _logger = logger;
         }
 
@@ -32,6 +35,10 @@ namespace Consultoria.Application.Services
             string emailNormalizado = request.EmailCorporativo
                 .Trim()
                 .ToLowerInvariant();
+
+            await ValidarAreaActivaAsync(
+                request.AreaEspecializacionId,
+                cancellationToken);
 
             await ValidarEmailUnicoAsync(
                 emailNormalizado,
@@ -50,9 +57,10 @@ namespace Consultoria.Application.Services
                 request.TarifaHora,
                 emailNormalizado);
 
-            int consultorId = await _consultorRepository.CrearAsync(
-                consultor,
-                cancellationToken);
+            int consultorId =
+                await _consultorRepository.CrearAsync(
+                    consultor,
+                    cancellationToken);
 
             _logger.LogInformation(
                 "Se creó el consultor {ConsultorId} con el correo {EmailCorporativo}.",
@@ -113,6 +121,10 @@ namespace Consultoria.Application.Services
                 .Trim()
                 .ToLowerInvariant();
 
+            await ValidarAreaActivaAsync(
+                request.AreaEspecializacionId,
+                cancellationToken);
+
             await ValidarEmailUnicoAsync(
                 emailNormalizado,
                 consultorId,
@@ -172,6 +184,23 @@ namespace Consultoria.Application.Services
             _logger.LogInformation(
                 "Se desactivó el consultor {ConsultorId}.",
                 consultorId);
+        }
+
+        private async Task ValidarAreaActivaAsync(
+            int areaEspecializacionId,
+            CancellationToken cancellationToken)
+        {
+            bool areaExisteYEstaActiva =
+                await _areaRepository.ExisteActivaAsync(
+                    areaEspecializacionId,
+                    cancellationToken);
+
+            if (!areaExisteYEstaActiva)
+            {
+                throw new BusinessException(
+                    $"El área de especialización con identificador " +
+                    $"{areaEspecializacionId} no existe o se encuentra inactiva.");
+            }
         }
 
         private async Task ValidarEmailUnicoAsync(

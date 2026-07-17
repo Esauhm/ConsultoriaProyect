@@ -7,42 +7,40 @@ using System.Text;
 namespace Consultoria.Application.Validators.Paquetes
 {
     public sealed class CrearPaqueteServicioValidator
-      : AbstractValidator<CrearPaqueteServicioDto>
+     : AbstractValidator<CrearPaqueteServicioDto>
     {
         public CrearPaqueteServicioValidator()
         {
-            RuleFor(x => x.Nombre)
+            RuleFor(request => request.Nombre)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty()
-                .WithMessage("El nombre del paquete es obligatorio.")
+                .WithMessage(
+                    "El nombre del paquete de servicio es obligatorio.")
+                .MinimumLength(3)
+                .WithMessage(
+                    "El nombre del paquete debe tener al menos 3 caracteres.")
                 .MaximumLength(150)
                 .WithMessage(
                     "El nombre del paquete no puede superar los 150 caracteres.");
 
-            RuleFor(x => x.AreaEspecializacionId)
+            RuleFor(request => request.ConsultorId)
                 .GreaterThan(0)
-                .WithMessage("El área de especialización es obligatoria.");
-
-            RuleFor(x => x.ConsultorId)
-                .GreaterThan(0)
-                .WithMessage("El consultor es obligatorio.");
-
-            RuleFor(x => x.DuracionHoras)
-                .GreaterThan(0)
-                .WithMessage("La duración debe ser mayor que cero.")
-                .LessThanOrEqualTo(1000)
                 .WithMessage(
-                    "La duración no puede superar las 1000 horas.");
+                    "Debe seleccionar un consultor válido.");
 
-            RuleFor(x => x.Costo)
+            RuleFor(request => request.DuracionHoras)
                 .GreaterThan(0)
-                .WithMessage("El costo debe ser mayor que cero.");
+                .WithMessage(
+                    "La duración del paquete debe ser mayor que cero.");
 
-            RuleFor(x => x.Descripcion)
+            RuleFor(request => request.Descripcion)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty()
+                .WithMessage(
+                    "La descripción del paquete es obligatoria.")
                 .MaximumLength(500)
                 .WithMessage(
-                    "La descripción no puede superar los 500 caracteres.")
-                .When(x => !string.IsNullOrWhiteSpace(x.Descripcion));
+                    "La descripción no puede superar los 500 caracteres.");
         }
     }
 }

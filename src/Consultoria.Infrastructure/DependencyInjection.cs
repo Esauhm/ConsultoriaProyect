@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
+using Consultoria.Infrastructure.Persistence.Seeding;
 using System.Text;
 
 namespace Consultoria.Infrastructure
@@ -36,15 +36,46 @@ namespace Consultoria.Infrastructure
                 ?? throw new InvalidOperationException(
                     "No se encontró la cadena de conexión 'DefaultConnection'.");
 
+            string adminPassword =
+                configuration["SeedUsers:AdminPassword"]
+                ?? throw new InvalidOperationException(
+                    "No se encontró 'SeedUsers:AdminPassword'.");
+
+            string userPassword =
+                configuration["SeedUsers:UserPassword"]
+                ?? throw new InvalidOperationException(
+                    "No se encontró 'SeedUsers:UserPassword'.");
+
             services.AddDbContext<ConsultoriaDbContext>(options =>
             {
-                options.UseSqlServer(connectionString);
+                options
+                    .UseSqlServer(connectionString)
+                    .UseSeeding((context, _) =>
+                    {
+                        DatabaseSeeder.Seed(
+                            (ConsultoriaDbContext)context,
+                            adminPassword,
+                            userPassword);
+                    })
+                    .UseAsyncSeeding(
+                        async (context, _, cancellationToken) =>
+                        {
+                            await DatabaseSeeder.SeedAsync(
+                                (ConsultoriaDbContext)context,
+                                adminPassword,
+                                userPassword,
+                                cancellationToken);
+                        });
             });
         }
 
         private static void RegistrarRepositorios(
             IServiceCollection services)
         {
+            services.AddScoped<
+                IAreaEspecializacionRepository,
+                AreaEspecializacionRepository>();
+
             services.AddScoped<
                 IConsultorRepository,
                 ConsultorRepository>();
