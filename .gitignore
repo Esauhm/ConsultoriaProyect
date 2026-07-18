@@ -1,0 +1,60 @@
+# =========================
+# Variables y secretos
+# =========================
+.env
+.env.*
+!.env.example
+
+**/secrets.json
+**/appsettings.Local.json
+**/appsettings.*.local.json
+
+# =========================
+# Compilación .NET
+# =========================
+[Bb]in/
+[Oo]bj/
+artifacts/
+
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# Visual Studio Code / Rider
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Pruebas y cobertura
+# =========================
+TestResults/
+coverage/
+coverage-results/
+*.coverage
+*.coveragexml
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Sistema operativo
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Archivos temporales
+# =========================
+*.tmp
+*.temp

@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
+using Consultoria.Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -129,10 +131,17 @@ var app = builder.Build();
 // 8. OpenAPI y Swagger solo en desarrollo
 // ---------------------------------------------------------
 
-app.UseExceptionHandler();
-
 if (app.Environment.IsDevelopment())
 {
+    await using AsyncServiceScope scope =
+        app.Services.CreateAsyncScope();
+
+    ConsultoriaDbContext dbContext =
+        scope.ServiceProvider
+            .GetRequiredService<ConsultoriaDbContext>();
+
+    await dbContext.Database.MigrateAsync();
+
     app.MapOpenApi();
 
     app.UseSwaggerUI(options =>
@@ -146,6 +155,8 @@ if (app.Environment.IsDevelopment())
 // ---------------------------------------------------------
 // 9. Pipeline HTTP
 // ---------------------------------------------------------
+
+app.UseExceptionHandler();
 
 app.UseHttpsRedirection();
 
