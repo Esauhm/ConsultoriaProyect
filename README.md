@@ -576,6 +576,109 @@ flowchart LR
 El Dockerfile utiliza compilación en múltiples etapas para separar el SDK de compilación del runtime final y ejecutar la aplicación con una imagen más pequeña.
 
 ---
+### ▶️ Ejecución rápida con Docker Compose
+
+<details>
+<summary><strong>Ver guía para levantar el proyecto</strong></summary>
+
+<br>
+
+#### Requisitos
+
+- Docker Desktop o Docker Engine.
+- Docker Compose.
+- Git.
+
+#### 1. Clonar el repositorio
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd Consultoria
+```
+
+#### 2. Crear el archivo de variables de entorno
+
+En PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+En Linux, macOS o Git Bash:
+
+```bash
+cp .env.example .env
+```
+
+Después se deben completar en `.env` las variables requeridas para SQL Server, JWT y usuarios de demostración.
+
+#### 3. Validar la configuración
+
+```bash
+docker compose --env-file .env -f docker/compose.yaml config
+```
+
+#### 4. Construir y levantar los servicios
+
+```bash
+docker compose --env-file .env -f docker/compose.yaml up -d --build
+```
+
+Este comando construye la API, inicia SQL Server, crea el volumen persistente y levanta ambos servicios.
+
+#### 5. Comprobar el estado
+
+```bash
+docker compose --env-file .env -f docker/compose.yaml ps -a
+```
+
+El resultado esperado es:
+
+```text
+consultoria-api         Up
+consultoria-sqlserver   Up (healthy)
+```
+
+#### 6. Abrir la documentación
+
+```text
+http://localhost:8080/swagger
+```
+
+#### Comandos útiles
+
+<table>
+  <thead>
+    <tr>
+      <th>Acción</th>
+      <th>Comando</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>📋 Ver logs de la API</td>
+      <td><code>docker compose --env-file .env -f docker/compose.yaml logs -f api</code></td>
+    </tr>
+    <tr>
+      <td>⏹️ Detener sin borrar datos</td>
+      <td><code>docker compose --env-file .env -f docker/compose.yaml down</code></td>
+    </tr>
+    <tr>
+      <td>▶️ Volver a levantar sin reconstruir</td>
+      <td><code>docker compose --env-file .env -f docker/compose.yaml up -d</code></td>
+    </tr>
+    <tr>
+      <td>🔨 Reconstruir únicamente la API</td>
+      <td><code>docker compose --env-file .env -f docker/compose.yaml up -d --build api</code></td>
+    </tr>
+  </tbody>
+</table>
+
+> Los datos de SQL Server se conservan mediante el volumen `consultoria_sql_data` aunque los contenedores sean detenidos o recreados.
+
+</details>
+
+---
 
 ## 🛡️ Buenas prácticas implementadas
 
