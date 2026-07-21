@@ -26,5 +26,9 @@ namespace Consultoria.Application.Interfaces.Services
         Task DesactivarAsync(
             int areaEspecializacionId,
             CancellationToken cancellationToken = default);
+
+        Task<AreaEspecializacionDto> ActivarAsync(
+        int areaEspecializacionId,
+        CancellationToken cancellationToken = default);
     }
 }

@@ -5,4 +5,8 @@
     <Project Path="src/Consultoria.Domain/Consultoria.Domain.csproj" />
     <Project Path="src/Consultoria.Infrastructure/Consultoria.Infrastructure.csproj" />
   </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Consultoria.IntegrationTests/Consultoria.IntegrationTests.csproj" />
+    <Project Path="tests/Consultoria.UnitTests/Consultoria.UnitTests.csproj" />
+  </Folder>
 </Solution>

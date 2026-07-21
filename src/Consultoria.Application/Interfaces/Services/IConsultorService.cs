@@ -26,5 +26,9 @@ namespace Consultoria.Application.Interfaces.Services
         Task DesactivarAsync(
             int consultorId,
             CancellationToken cancellationToken = default);
+
+        Task<ConsultorDto> ActivarAsync(
+            int consultorId,
+            CancellationToken cancellationToken = default);
     }
 }

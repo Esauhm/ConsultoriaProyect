@@ -1,6 +1,7 @@
 ﻿using Consultoria.Api.Models.Responses;
 using Consultoria.Application.DTOs.AreasEspecializacion;
 using Consultoria.Application.Interfaces.Services;
+using Consultoria.Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -171,6 +172,39 @@ namespace Consultoria.Api.Controllers
                 ApiResponse<object?>.Ok(
                     null,
                     "Área de especialización desactivada correctamente."));
+        }
+
+        [HttpPatch("{id:int}/activar")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(
+            typeof(ApiResponse<AreaEspecializacionDto>),
+            StatusCodes.Status200OK)]
+                [ProducesResponseType(
+            typeof(ProblemDetails),
+            StatusCodes.Status401Unauthorized)]
+                [ProducesResponseType(
+            typeof(ProblemDetails),
+            StatusCodes.Status403Forbidden)]
+                [ProducesResponseType(
+            typeof(ProblemDetails),
+            StatusCodes.Status404NotFound)]
+                [ProducesResponseType(
+            typeof(ProblemDetails),
+            StatusCodes.Status422UnprocessableEntity)]
+        public async Task<ActionResult<ApiResponse<AreaEspecializacionDto>>> Activar(
+            int id,
+            CancellationToken cancellationToken)
+        {
+            AreaEspecializacionDto area =
+                await _areaService
+                    .ActivarAsync(
+                        id,
+                        cancellationToken);
+
+            return Ok(
+                ApiResponse<AreaEspecializacionDto>.Ok(
+                    area,
+                    "Área de especialización reactivada correctamente."));
         }
     }
 }

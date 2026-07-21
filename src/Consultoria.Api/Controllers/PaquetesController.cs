@@ -172,5 +172,37 @@ namespace Consultoria.Api.Controllers
                     null,
                     "Paquete de servicio desactivado correctamente."));
         }
+
+        [HttpPatch("{id:int}/activar")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(
+        typeof(ApiResponse<PaqueteServicioDto>),
+        StatusCodes.Status200OK)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status401Unauthorized)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status403Forbidden)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status404NotFound)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status422UnprocessableEntity)]
+        public async Task<ActionResult<ApiResponse<PaqueteServicioDto>>> Activar(
+            int id,
+            CancellationToken cancellationToken)
+        {
+            PaqueteServicioDto paquete =
+                await _paqueteServicioService.ActivarAsync(
+                    id,
+                    cancellationToken);
+
+            return Ok(
+                ApiResponse<PaqueteServicioDto>.Ok(
+                    paquete,
+                    "Paquete de servicio reactivado correctamente."));
+        }
     }
 }

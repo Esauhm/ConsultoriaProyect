@@ -163,6 +163,45 @@ namespace Consultoria.Application.Services
                 areaEspecializacionId);
         }
 
+        public async Task<AreaEspecializacionDto> ActivarAsync(
+            int areaEspecializacionId,
+            CancellationToken cancellationToken = default)
+        {
+            AreaEspecializacion area =
+                await _areaRepository.ObtenerEntidadPorIdAsync(
+                    areaEspecializacionId,
+                    cancellationToken)
+                ?? throw new NotFoundException(
+                    $"No se encontró el área de especialización " +
+                    $"con identificador {areaEspecializacionId}.");
+
+            if (area.Activo)
+            {
+                throw new BusinessException(
+                    "El área de especialización ya se encuentra activa.");
+            }
+
+            area.Activar();
+
+            await _areaRepository.ActualizarAsync(
+                area,
+                cancellationToken);
+
+            _logger.LogInformation(
+                "Área de especialización reactivada. " +
+                "AreaEspecializacionId: {AreaEspecializacionId}",
+                areaEspecializacionId);
+
+            AreaEspecializacionDto? resultado =
+                await _areaRepository.ObtenerPorIdAsync(
+                    areaEspecializacionId,
+                    cancellationToken);
+
+            return resultado
+                ?? throw new InvalidOperationException(
+                    "El área fue reactivada, pero no pudo recuperarse.");
+        }
+
         private static string NormalizarNombre(string nombre)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(nombre);

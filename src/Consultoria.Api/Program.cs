@@ -4,12 +4,13 @@ using Consultoria.Api.OpenApi;
 using Consultoria.Application;
 using Consultoria.Infrastructure;
 using Consultoria.Infrastructure.Authentication;
+using Consultoria.Infrastructure.Persistence.Context;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
-using Consultoria.Infrastructure.Persistence.Context;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,6 +46,17 @@ builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure(
     builder.Configuration);
+
+// ---------------------------------------------------------
+// Health Checks
+// ---------------------------------------------------------
+
+builder.Services
+    .AddHealthChecks()
+    .AddDbContextCheck<ConsultoriaDbContext>(
+        name: "sqlserver",
+        tags: ["ready"]);
+
 
 // ---------------------------------------------------------
 // 4. Leer configuración JWT
@@ -114,8 +126,6 @@ builder.Services
 
 builder.Services.AddAuthorization();
 
-builder.Services.AddAuthorization();
-
 builder.Services.AddProblemDetails();
 
 builder.Services.AddExceptionHandler<
@@ -131,9 +141,16 @@ var app = builder.Build();
 // 8. OpenAPI y Swagger solo en desarrollo
 // ---------------------------------------------------------
 
-if (app.Environment.IsDevelopment())
+bool isDevelopment =
+    app.Environment.IsDevelopment();
+
+bool isTesting =
+    app.Environment.IsEnvironment("Testing");
+
+// Aplicar migraciones en desarrollo y pruebas de integración
+if (isDevelopment || isTesting)
 {
-    await using AsyncServiceScope scope =
+    await using var scope =
         app.Services.CreateAsyncScope();
 
     ConsultoriaDbContext dbContext =
@@ -141,7 +158,11 @@ if (app.Environment.IsDevelopment())
             .GetRequiredService<ConsultoriaDbContext>();
 
     await dbContext.Database.MigrateAsync();
+}
 
+// OpenAPI y Swagger únicamente en desarrollo
+if (isDevelopment)
+{
     app.MapOpenApi();
 
     app.UseSwaggerUI(options =>
@@ -164,6 +185,30 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+// Comprueba únicamente que la API está viva.
+app.MapHealthChecks(
+    "/health/live",
+    new HealthCheckOptions
+    {
+        Predicate = _ => false
+    });
+
+// Comprueba dependencias necesarias para operar,
+// actualmente SQL Server.
+app.MapHealthChecks(
+    "/health/ready",
+    new HealthCheckOptions
+    {
+        Predicate = healthCheck =>
+            healthCheck.Tags.Contains("ready")
+    });
+
 app.MapControllers();
 
 app.Run();
+
+// ---------------------------------------------------------
+// Clase parcial requerida para habilitar la infraestructura de pruebas de integración.
+// ---------------------------------------------------------
+
+public partial class Program{ }

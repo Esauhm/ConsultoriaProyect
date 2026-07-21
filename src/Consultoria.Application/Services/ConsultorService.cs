@@ -240,5 +240,56 @@ namespace Consultoria.Application.Services
                     "Ya existe un consultor con el mismo nombre y área de especialización.");
             }
         }
+
+        public async Task<ConsultorDto> ActivarAsync(
+            int consultorId,
+            CancellationToken cancellationToken = default)
+        {
+            Consultor consultor =
+                await _consultorRepository.ObtenerEntidadPorIdAsync(
+                    consultorId,
+                    cancellationToken)
+                ?? throw new NotFoundException(
+                    $"No se encontró el consultor con identificador {consultorId}.");
+
+            if (consultor.Activo)
+            {
+                throw new BusinessException(
+                    "El consultor ya se encuentra activo.");
+            }
+
+            bool areaActiva =
+                await _areaRepository.ExisteActivaAsync(
+                    consultor.AreaEspecializacionId,
+                    cancellationToken);
+
+            if (!areaActiva)
+            {
+                throw new BusinessException(
+                    "No se puede reactivar el consultor porque su área " +
+                    "de especialización se encuentra inactiva.");
+            }
+
+            consultor.Activar();
+
+            await _consultorRepository.ActualizarAsync(
+                consultor,
+                cancellationToken);
+
+            _logger.LogInformation(
+                "Consultor reactivado. ConsultorId: {ConsultorId}, " +
+                "AreaEspecializacionId: {AreaEspecializacionId}",
+                consultorId,
+                consultor.AreaEspecializacionId);
+
+            ConsultorDto? resultado =
+                await _consultorRepository.ObtenerPorIdAsync(
+                    consultorId,
+                    cancellationToken);
+
+            return resultado
+                ?? throw new InvalidOperationException(
+                    "El consultor fue reactivado, pero no pudo recuperarse.");
+        }
     }
 }

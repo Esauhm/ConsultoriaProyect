@@ -210,5 +210,83 @@ namespace Consultoria.Application.Services
 
             return consultor;
         }
+
+        public async Task<PaqueteServicioDto> ActivarAsync(
+            int paqueteId,
+            CancellationToken cancellationToken = default)
+        {
+            PaqueteServicio paquete =
+                await _paqueteRepository.ObtenerEntidadPorIdAsync(
+                    paqueteId,
+                    cancellationToken)
+                ?? throw new NotFoundException(
+                    $"No se encontró el paquete de servicio " +
+                    $"con identificador {paqueteId}.");
+
+            if (paquete.Activo)
+            {
+                throw new BusinessException(
+                    "El paquete de servicio ya se encuentra activo.");
+            }
+
+            Consultor consultor =
+                await _consultorRepository.ObtenerEntidadPorIdAsync(
+                    paquete.ConsultorId,
+                    cancellationToken)
+                ?? throw new BusinessException(
+                    "No se puede reactivar el paquete porque el " +
+                    "consultor asociado ya no existe.");
+
+            if (!consultor.Activo)
+            {
+                throw new BusinessException(
+                    "No se puede reactivar el paquete porque el " +
+                    "consultor asociado se encuentra inactivo.");
+            }
+
+            bool areaActiva =
+                await _areaRepository.ExisteActivaAsync(
+                    paquete.AreaEspecializacionId,
+                    cancellationToken);
+
+            if (!areaActiva)
+            {
+                throw new BusinessException(
+                    "No se puede reactivar el paquete porque su área " +
+                    "de especialización se encuentra inactiva.");
+            }
+
+            if (consultor.AreaEspecializacionId !=
+                paquete.AreaEspecializacionId)
+            {
+                throw new BusinessException(
+                    "No se puede reactivar el paquete porque el consultor " +
+                    "ya no pertenece al área registrada en el paquete. " +
+                    "Actualiza primero la información del paquete.");
+            }
+
+            paquete.Activar();
+
+            await _paqueteRepository.ActualizarAsync(
+                paquete,
+                cancellationToken);
+
+            _logger.LogInformation(
+                "Paquete de servicio reactivado. " +
+                "PaqueteId: {PaqueteId}, ConsultorId: {ConsultorId}, " +
+                "AreaEspecializacionId: {AreaEspecializacionId}",
+                paqueteId,
+                paquete.ConsultorId,
+                paquete.AreaEspecializacionId);
+
+            PaqueteServicioDto? resultado =
+                await _paqueteRepository.ObtenerPorIdAsync(
+                    paqueteId,
+                    cancellationToken);
+
+            return resultado
+                ?? throw new InvalidOperationException(
+                    "El paquete fue reactivado, pero no pudo recuperarse.");
+        }
     }
 }

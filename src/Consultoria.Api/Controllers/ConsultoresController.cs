@@ -166,5 +166,38 @@ namespace Consultoria.Api.Controllers
                     null,
                     "Consultor desactivado correctamente."));
         }
+
+
+        [HttpPatch("{id:int}/activar")]
+        [Authorize(Roles = "Admin")]
+        [ProducesResponseType(
+        typeof(ApiResponse<ConsultorDto>),
+        StatusCodes.Status200OK)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status401Unauthorized)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status403Forbidden)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+        StatusCodes.Status404NotFound)]
+            [ProducesResponseType(
+        typeof(ProblemDetails),
+            StatusCodes.Status422UnprocessableEntity)]
+        public async Task<ActionResult<ApiResponse<ConsultorDto>>> Activar(
+            int id,
+            CancellationToken cancellationToken)
+        {
+            ConsultorDto consultor =
+                await _consultorService.ActivarAsync(
+                    id,
+                    cancellationToken);
+
+            return Ok(
+                ApiResponse<ConsultorDto>.Ok(
+                    consultor,
+                    "Consultor reactivado correctamente."));
+        }
     }
 }

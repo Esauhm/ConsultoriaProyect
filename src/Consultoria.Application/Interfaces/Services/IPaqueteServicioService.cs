@@ -26,5 +26,9 @@ namespace Consultoria.Application.Interfaces.Services
         Task DesactivarAsync(
             int paqueteId,
             CancellationToken cancellationToken = default);
+
+        Task<PaqueteServicioDto> ActivarAsync(
+            int paqueteId,
+            CancellationToken cancellationToken = default);
     }
 }
