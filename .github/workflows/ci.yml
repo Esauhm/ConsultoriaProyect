@@ -1,0 +1,101 @@
+name: Consultoria CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: consultoria-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+
+jobs:
+  build-and-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # ------------------------------------------------------
+      # Descargar el código del repositorios
+      # ------------------------------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      # ------------------------------------------------------
+      # Instalar el SDK utilizado por la solución
+      # ------------------------------------------------------
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "10.0.x"
+
+      # ------------------------------------------------------
+      # Mostrar información del ambiente
+      # ------------------------------------------------------
+      - name: Display .NET information
+        run: dotnet --info
+
+      - name: Verify Docker
+        run: docker info
+
+      # ------------------------------------------------------
+      # Restaurar dependencias
+      # ------------------------------------------------------
+      - name: Restore dependencies
+        run: dotnet restore Consultoria.slnx
+
+      # ------------------------------------------------------
+      # Compilar toda la solución
+      # ------------------------------------------------------
+      - name: Build solution
+        run: >
+          dotnet build Consultoria.slnx
+          --configuration Release
+          --no-restore
+
+      # ------------------------------------------------------
+      # Ejecutar pruebas unitarias
+      # ------------------------------------------------------
+      - name: Run unit tests
+        run: >
+          dotnet test
+          tests/Consultoria.UnitTests/Consultoria.UnitTests.csproj
+          --configuration Release
+          --no-build
+          --no-restore
+          --logger "trx;LogFileName=unit-tests.trx"
+          --results-directory TestResults/Unit
+
+      # ------------------------------------------------------
+      # Ejecutar pruebas de integración
+      # Testcontainers levantará SQL Server temporalmente
+      # ------------------------------------------------------
+      - name: Run integration tests
+        run: >
+          dotnet test
+          tests/Consultoria.IntegrationTests/Consultoria.IntegrationTests.csproj
+          --configuration Release
+          --no-build
+          --no-restore
+          --logger "trx;LogFileName=integration-tests.trx"
+          --results-directory TestResults/Integration
+
+      # ------------------------------------------------------
+      # Guardar resultados aunque una prueba falle
+      # ------------------------------------------------------
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: consultoria-test-results
+          path: TestResults
+          if-no-files-found: warn
+          retention-days: 7
