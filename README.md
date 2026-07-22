@@ -26,9 +26,8 @@
 
 ---
 
-## ⭐ Middle-level engineering highlights
+## ⭐ Engineering highlights
 
-> The most relevant technical capabilities are placed first so recruiters and reviewers can immediately identify the engineering practices demonstrated by the project.
 
 <table>
   <tr>
