@@ -26,9 +26,7 @@
 
 ---
 
-## ⭐ Capacidades técnicas de nivel Middle
-
-> Las capacidades más relevantes aparecen primero para que reclutadores y revisores identifiquen rápidamente las prácticas de ingeniería demostradas por el proyecto.
+## ⭐ Capacidades técnicas 
 
 <table>
   <tr>
