@@ -13,5 +13,8 @@ namespace Consultoria.Application.DTOs.Consultores
         public decimal TarifaHora { get; init; }
 
         public string EmailCorporativo { get; init; } = string.Empty;
+
+        public byte[] RowVersion { get; init; } =
+            Array.Empty<byte>();
     }
 }

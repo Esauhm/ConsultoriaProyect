@@ -1,4 +1,5 @@
-﻿using Consultoria.Application.DTOs.Paquetes;
+﻿using Consultoria.Application.Common.Exceptions;
+using Consultoria.Application.DTOs.Paquetes;
 using Consultoria.Application.Interfaces.Repositories;
 using Consultoria.Domain.Entities;
 using Consultoria.Infrastructure.Persistence.Context;
@@ -78,7 +79,9 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                     Costo = paquete.Costo,
                     Descripcion = paquete.Descripcion,
                     Activo = paquete.Activo,
-                    FechaCreacion = paquete.FechaCreacion
+                    FechaCreacion = paquete.FechaCreacion,
+
+                    RowVersion = area.RowVersion
                 })
                 .FirstOrDefaultAsync(cancellationToken);
         }
@@ -118,7 +121,9 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                     Costo = paquete.Costo,
                     Descripcion = paquete.Descripcion,
                     Activo = paquete.Activo,
-                    FechaCreacion = paquete.FechaCreacion
+                    FechaCreacion = paquete.FechaCreacion,
+
+                    RowVersion = area.RowVersion
                 })
                 .ToListAsync(cancellationToken);
         }
@@ -153,6 +158,29 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
             paquete.Desactivar();
 
             await _context.SaveChangesAsync(cancellationToken);
+        }
+
+        public async Task ActualizarAsync(
+            PaqueteServicio paquete,
+            byte[] rowVersion,
+            CancellationToken cancellationToken = default)
+        {
+            _context.Entry(paquete)
+                .Property(entity => entity.RowVersion)
+                .OriginalValue = rowVersion;
+
+            try
+            {
+                await _context.SaveChangesAsync(
+                    cancellationToken);
+            }
+            catch (DbUpdateConcurrencyException exception)
+            {
+                throw new ConcurrencyException(
+                    "El paquete de servicio fue modificado por otro usuario. " +
+                    "Obtén nuevamente el registro antes de actualizarlo.",
+                    exception);
+            }
         }
     }
 }

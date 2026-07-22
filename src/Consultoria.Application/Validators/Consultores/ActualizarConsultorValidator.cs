@@ -37,6 +37,11 @@ namespace Consultoria.Application.Validators.Consultores
                 .MaximumLength(150)
                 .WithMessage(
                     "El correo corporativo no puede superar los 150 caracteres.");
+
+            RuleFor(request => request.RowVersion)
+                .NotEmpty()
+                .WithMessage(
+                    "La versión del registro es obligatoria.");
         }
     }
 }

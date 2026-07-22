@@ -13,5 +13,8 @@ namespace Consultoria.Application.DTOs.Paquetes
         public int DuracionHoras { get; init; }
 
         public string Descripcion { get; init; } = string.Empty;
+
+        public byte[] RowVersion { get; init; } =
+            Array.Empty<byte>();
     }
 }

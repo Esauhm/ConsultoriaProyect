@@ -11,5 +11,8 @@ namespace Consultoria.Application.DTOs.AreasEspecializacion
         public string Nombre { get; init; } = string.Empty;
 
         public bool Activo { get; init; }
+
+        public byte[] RowVersion { get; init; } =
+        Array.Empty<byte>();
     }
 }

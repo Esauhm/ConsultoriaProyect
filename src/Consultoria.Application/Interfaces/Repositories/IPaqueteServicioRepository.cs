@@ -27,6 +27,11 @@ namespace Consultoria.Application.Interfaces.Repositories
             PaqueteServicio paquete,
             CancellationToken cancellationToken = default);
 
+        Task ActualizarAsync(
+            PaqueteServicio paquete,
+            byte[] rowVersion,
+            CancellationToken cancellationToken = default);
+
         Task DesactivarAsync(
             int paqueteId,
             CancellationToken cancellationToken = default);

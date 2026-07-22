@@ -10,6 +10,9 @@ namespace Consultoria.Domain.Entities
         public string Nombre { get; private set; } = string.Empty;
         public bool Activo { get; private set; }
 
+        public byte[] RowVersion { get; private set; } =
+            Array.Empty<byte>();
+
         private AreaEspecializacion()
         {
         }

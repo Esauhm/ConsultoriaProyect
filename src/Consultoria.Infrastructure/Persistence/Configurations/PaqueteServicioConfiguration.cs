@@ -104,6 +104,9 @@ namespace Consultoria.Infrastructure.Persistence.Configurations
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName(
                     "FK_PaquetesServicio_Consultores");
+
+            builder.Property(paquete => paquete.RowVersion)
+                .IsRowVersion();
         }
     }
 }

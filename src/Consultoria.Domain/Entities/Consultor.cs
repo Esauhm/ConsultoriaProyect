@@ -14,6 +14,9 @@ namespace Consultoria.Domain.Entities
         public bool Activo { get; private set; }
         public DateTime FechaIngreso { get; private set; }
 
+        public byte[] RowVersion { get; private set; } =
+            Array.Empty<byte>();
+
         private Consultor()
         {
         }

@@ -115,8 +115,9 @@ namespace Consultoria.Application.Services
             area.ActualizarNombre(nombre);
 
             await _areaRepository.ActualizarAsync(
-                area,
-                cancellationToken);
+                 area,
+                 request.RowVersion,
+                 cancellationToken);
 
             _logger.LogInformation(
                 "Área de especialización actualizada. AreaEspecializacionId: {AreaEspecializacionId}, Nombre: {Nombre}",

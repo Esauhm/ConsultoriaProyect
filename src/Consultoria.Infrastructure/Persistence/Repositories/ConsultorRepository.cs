@@ -1,4 +1,5 @@
-﻿using Consultoria.Application.DTOs.Consultores;
+﻿using Consultoria.Application.Common.Exceptions;
+using Consultoria.Application.DTOs.Consultores;
 using Consultoria.Application.Interfaces.Repositories;
 using Consultoria.Domain.Entities;
 using Consultoria.Infrastructure.Persistence.Context;
@@ -61,7 +62,8 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                     TarifaHora = consultor.TarifaHora,
                     EmailCorporativo = consultor.EmailCorporativo,
                     Activo = consultor.Activo,
-                    FechaIngreso = consultor.FechaIngreso
+                    FechaIngreso = consultor.FechaIngreso,
+                    RowVersion = area.RowVersion
                 })
                 .FirstOrDefaultAsync(cancellationToken);
         }
@@ -85,7 +87,8 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                     TarifaHora = consultor.TarifaHora,
                     EmailCorporativo = consultor.EmailCorporativo,
                     Activo = consultor.Activo,
-                    FechaIngreso = consultor.FechaIngreso
+                    FechaIngreso = consultor.FechaIngreso,
+                    RowVersion = area.RowVersion
                 })
                 .ToListAsync(cancellationToken);
         }
@@ -179,6 +182,30 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                         consultor.ConsultorId == consultorId
                         && consultor.Activo,
                     cancellationToken);
+        }
+
+
+        public async Task ActualizarAsync(
+            Consultor consultor,
+            byte[] rowVersion,
+            CancellationToken cancellationToken = default)
+        {
+            _context.Entry(consultor)
+                .Property(entity => entity.RowVersion)
+                .OriginalValue = rowVersion;
+
+            try
+            {
+                await _context.SaveChangesAsync(
+                    cancellationToken);
+            }
+            catch (DbUpdateConcurrencyException exception)
+            {
+                throw new ConcurrencyException(
+                    "El consultor fue modificado por otro usuario. " +
+                    "Obtén nuevamente el registro antes de actualizarlo.",
+                    exception);
+            }
         }
     }
 }

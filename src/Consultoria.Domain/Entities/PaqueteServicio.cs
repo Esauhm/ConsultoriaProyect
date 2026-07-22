@@ -26,6 +26,9 @@ namespace Consultoria.Domain.Entities
 
         public DateTime FechaCreacion { get; private set; }
 
+        public byte[] RowVersion { get; private set; } =
+            Array.Empty<byte>();
+
         private PaqueteServicio()
         {
         }

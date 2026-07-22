@@ -29,5 +29,8 @@ namespace Consultoria.Application.DTOs.Paquetes
         public bool Activo { get; init; }
 
         public DateTime FechaCreacion { get; init; }
+
+        public byte[] RowVersion { get; init; } =
+            Array.Empty<byte>();
     }
 }

@@ -73,6 +73,9 @@ namespace Consultoria.Infrastructure.Persistence.Configurations
                 .OnDelete(DeleteBehavior.Restrict)
                 .HasConstraintName(
                     "FK_Consultores_AreasEspecializacion");
+
+            builder.Property(consultor => consultor.RowVersion)
+                .IsRowVersion();
         }
     }
 }

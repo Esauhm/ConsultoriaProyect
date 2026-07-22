@@ -87,6 +87,12 @@ namespace Consultoria.Api.Middleware
                         "Conflicto",
                         exception.Message),
 
+                ConcurrencyException =>
+                    new ErrorDetails(
+                        StatusCodes.Status409Conflict,
+                        "Conflicto de concurrencia",
+                    exception.Message),
+
                 UnauthorizedException =>
                     new ErrorDetails(
                         StatusCodes.Status401Unauthorized,

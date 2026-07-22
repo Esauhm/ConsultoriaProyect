@@ -22,6 +22,11 @@ namespace Consultoria.Application.Validators.AreasEspecializacion
                 .MaximumLength(100)
                 .WithMessage(
                     "El nombre del área no puede superar los 100 caracteres.");
+
+            RuleFor(request => request.RowVersion)
+                .NotEmpty()
+                .WithMessage(
+                    "La versión del registro es obligatoria.");
         }
     }
 }

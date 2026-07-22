@@ -126,6 +126,7 @@ namespace Consultoria.Application.Services
 
             await _paqueteRepository.ActualizarAsync(
                 paquete,
+                request.RowVersion,
                 cancellationToken);
 
             _logger.LogInformation(

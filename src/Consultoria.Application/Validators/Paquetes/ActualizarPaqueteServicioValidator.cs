@@ -41,6 +41,11 @@ namespace Consultoria.Application.Validators.Paquetes
                 .MaximumLength(500)
                 .WithMessage(
                     "La descripción no puede superar los 500 caracteres.");
+
+            RuleFor(request => request.RowVersion)
+                .NotEmpty()
+                .WithMessage(
+                    "La versión del registro es obligatoria.");
         }
     }
 }

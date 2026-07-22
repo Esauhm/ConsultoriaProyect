@@ -31,6 +31,9 @@ namespace Consultoria.Infrastructure.Persistence.Configurations
             builder.HasIndex(x => x.Nombre)
                 .IsUnique()
                 .HasDatabaseName("UX_AreasEspecializacion_Nombre");
+
+            builder.Property(area => area.RowVersion)
+                .IsRowVersion();
         }
     }
 }

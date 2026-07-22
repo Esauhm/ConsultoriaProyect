@@ -21,5 +21,8 @@ namespace Consultoria.Application.DTOs.Consultores
         public bool Activo { get; init; }
 
         public DateTime FechaIngreso { get; init; }
+
+        public byte[] RowVersion { get; init; } =
+            Array.Empty<byte>();
     }
 }

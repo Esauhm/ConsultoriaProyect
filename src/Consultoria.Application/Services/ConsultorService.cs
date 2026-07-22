@@ -144,6 +144,7 @@ namespace Consultoria.Application.Services
 
             await _consultorRepository.ActualizarAsync(
                 consultor,
+                request.RowVersion,
                 cancellationToken);
 
             _logger.LogInformation(

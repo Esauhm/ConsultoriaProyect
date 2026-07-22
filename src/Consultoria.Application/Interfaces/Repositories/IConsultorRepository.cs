@@ -27,6 +27,11 @@ namespace Consultoria.Application.Interfaces.Repositories
             Consultor consultor,
             CancellationToken cancellationToken = default);
 
+        Task ActualizarAsync(
+            Consultor consultor,
+            byte[] rowVersion,
+            CancellationToken cancellationToken = default);
+
         Task DesactivarAsync(
             int consultorId,
             CancellationToken cancellationToken = default);

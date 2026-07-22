@@ -27,6 +27,11 @@ namespace Consultoria.Application.Interfaces.Repositories
             AreaEspecializacion area,
             CancellationToken cancellationToken = default);
 
+        Task ActualizarAsync(
+            AreaEspecializacion area,
+            byte[] rowVersion,
+            CancellationToken cancellationToken = default);
+
         Task DesactivarAsync(
             int areaEspecializacionId,
             CancellationToken cancellationToken = default);

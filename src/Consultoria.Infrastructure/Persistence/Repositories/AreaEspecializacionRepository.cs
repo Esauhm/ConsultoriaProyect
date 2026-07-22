@@ -1,4 +1,5 @@
-﻿using Consultoria.Application.DTOs.AreasEspecializacion;
+﻿using Consultoria.Application.Common.Exceptions;
+using Consultoria.Application.DTOs.AreasEspecializacion;
 using Consultoria.Application.Interfaces.Repositories;
 using Consultoria.Domain.Entities;
 using Consultoria.Infrastructure.Persistence.Context;
@@ -60,7 +61,9 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
 
                     Nombre = area.Nombre,
 
-                    Activo = area.Activo
+                    Activo = area.Activo,
+
+                    RowVersion = area.RowVersion
                 })
                 .SingleOrDefaultAsync(cancellationToken);
         }
@@ -79,7 +82,9 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
 
                     Nombre = area.Nombre,
 
-                    Activo = area.Activo
+                    Activo = area.Activo,
+
+                    RowVersion = area.RowVersion
                 })
                 .ToListAsync(cancellationToken);
         }
@@ -148,6 +153,29 @@ namespace Consultoria.Infrastructure.Persistence.Repositories
                         areaEspecializacionId &&
                         area.Activo,
                     cancellationToken);
+        }
+
+        public async Task ActualizarAsync(
+            AreaEspecializacion area,
+            byte[] rowVersion,
+            CancellationToken cancellationToken = default)
+        {
+            _context.Entry(area)
+                .Property(entity => entity.RowVersion)
+                .OriginalValue = rowVersion;
+
+            try
+            {
+                await _context.SaveChangesAsync(
+                    cancellationToken);
+            }
+            catch (DbUpdateConcurrencyException exception)
+            {
+                throw new ConcurrencyException(
+                    "El área de especialización fue modificada por otro " +
+                    "usuario. Obtén nuevamente el registro antes de actualizarlo.",
+                    exception);
+            }
         }
     }
 }
