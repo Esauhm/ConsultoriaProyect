@@ -2,53 +2,93 @@
 
 # 💼 Consultoria API
 
-### Backend empresarial para gestión de consultores, servicios y reportes
+### Enterprise backend for managing consultants, service packages, authentication, and administrative reports
 
 <p>
-  Proyecto de portafolio desarrollado con <strong>.NET 10</strong>, <strong>Clean Architecture</strong>,
-  <strong>Entity Framework Core</strong>, <strong>SQL Server</strong>, <strong>JWT</strong> y
-  <strong>Docker Compose</strong>.
+  <a href="README.md">
+    <img src="https://img.shields.io/badge/English-Active-0A66C2?style=for-the-badge" alt="English" />
+  </a>
+  <a href="README.es.md">
+    <img src="https://img.shields.io/badge/Español-Ver%20versión-6C757D?style=for-the-badge" alt="Español" />
+  </a>
 </p>
 
 <p>
   <img src="https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white" alt=".NET 10" />
   <img src="https://img.shields.io/badge/C%23-Backend-239120?logo=csharp&logoColor=white" alt="C#" />
-  <img src="https://img.shields.io/badge/SQL%20Server-2022-CC2927?logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />
+  <img src="https://img.shields.io/badge/SQL%20Server-2022-CC2927?logo=microsoftsqlserver&logoColor=white" alt="SQL Server 2022" />
   <img src="https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker&logoColor=white" alt="Docker Compose" />
-  <img src="https://img.shields.io/badge/Arquitectura-Clean%20Architecture-0A66C2" alt="Clean Architecture" />
-  <img src="https://img.shields.io/badge/Estado-En%20desarrollo-F59E0B" alt="En desarrollo" />
+  <img src="https://img.shields.io/badge/CI-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Architecture-Clean%20Architecture-0A66C2" alt="Clean Architecture" />
 </p>
 
 </div>
 
 ---
 
-## 👋 Sobre el proyecto
+## ⭐ Middle-level engineering highlights
 
-**Consultoria API** es una API REST orientada a la administración de una empresa de consultoría.
+> The most relevant technical capabilities are placed first so recruiters and reviewers can immediately identify the engineering practices demonstrated by the project.
 
-El sistema permite gestionar áreas de especialización, consultores, paquetes de servicio, autenticación por roles y reportes administrativos. El objetivo principal del proyecto es demostrar experiencia práctica en el diseño de soluciones backend empresariales, aplicando separación de responsabilidades, reglas de negocio, seguridad y despliegue mediante contenedores.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <ul>
+        <li>✅ Clean Architecture with strict dependency direction</li>
+        <li>✅ Domain entities with encapsulated business behavior</li>
+        <li>✅ JWT authentication and role-based authorization</li>
+        <li>✅ FluentValidation and global ProblemDetails error handling</li>
+        <li>✅ EF Core migrations, configurations, projections, and repositories</li>
+        <li>✅ Optimistic concurrency with SQL Server <code>rowversion</code></li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <ul>
+        <li>✅ Unit tests for domain and application services</li>
+        <li>✅ Integration tests with WebApplicationFactory and Testcontainers</li>
+        <li>✅ Isolated SQL Server database for the Testing environment</li>
+        <li>✅ Docker multi-stage build and Docker Compose orchestration</li>
+        <li>✅ Liveness and readiness health checks</li>
+        <li>✅ GitHub Actions CI for build, unit tests, and integration tests</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### Technologies demonstrated
+
+`C#` · `.NET 10` · `ASP.NET Core Web API` · `Entity Framework Core` · `SQL Server 2022` · `JWT Bearer` · `FluentValidation` · `xUnit` · `Moq` · `WebApplicationFactory` · `Testcontainers` · `Docker` · `Docker Compose` · `GitHub Actions` · `OpenAPI / Swagger`
+
+---
+
+## 👋 About the project
+
+**Consultoria API** is a REST API designed for the administration of a consulting company.
+
+It manages specialization areas, consultants, service packages, users, role-based authentication, and administrative reports. The project was built as a professional portfolio project to demonstrate backend engineering practices used in business applications: separation of concerns, business rules, security, database consistency, automated testing, containerization, and continuous integration.
 
 <table>
   <tr>
     <td width="50%">
-      <h3>🎯 Enfoque técnico</h3>
+      <h3>🎯 Technical focus</h3>
       <ul>
-        <li>Diseño de APIs REST</li>
-        <li>Arquitectura limpia</li>
-        <li>Seguridad con JWT</li>
-        <li>Persistencia relacional</li>
-        <li>Contenedores con Docker</li>
+        <li>REST API design</li>
+        <li>Clean Architecture</li>
+        <li>Security with JWT</li>
+        <li>Relational persistence</li>
+        <li>Automated testing</li>
+        <li>Containerized environments</li>
       </ul>
     </td>
     <td width="50%">
-      <h3>🏢 Enfoque de negocio</h3>
+      <h3>🏢 Business focus</h3>
       <ul>
-        <li>Administración de consultores</li>
-        <li>Tarifas por hora</li>
-        <li>Servicios calculados automáticamente</li>
-        <li>Control de estados activos e inactivos</li>
-        <li>Reportes de facturación</li>
+        <li>Consultant administration</li>
+        <li>Hourly rates</li>
+        <li>Automatically calculated services</li>
+        <li>Active and inactive state management</li>
+        <li>Billing and operational reports</li>
+        <li>Historical rate preservation</li>
       </ul>
     </td>
   </tr>
@@ -56,109 +96,30 @@ El sistema permite gestionar áreas de especialización, consultores, paquetes d
 
 ---
 
-## ✨ ¿Qué demuestra este proyecto?
+## 🧰 Technology stack
 
-<table>
-  <tr>
-    <td align="center" width="25%">
-      <h3>🏗️</h3>
-      <strong>Arquitectura</strong>
-      <p>Separación clara entre dominio, aplicación, infraestructura y API.</p>
-    </td>
-    <td align="center" width="25%">
-      <h3>🔐</h3>
-      <strong>Seguridad</strong>
-      <p>Autenticación JWT y autorización basada en roles.</p>
-    </td>
-    <td align="center" width="25%">
-      <h3>🧠</h3>
-      <strong>Negocio</strong>
-      <p>Reglas encapsuladas en servicios y entidades de dominio.</p>
-    </td>
-    <td align="center" width="25%">
-      <h3>🐳</h3>
-      <strong>Despliegue</strong>
-      <p>API y SQL Server ejecutándose mediante Docker Compose.</p>
-    </td>
-  </tr>
-</table>
+| Area | Technology | Usage |
+|---|---|---|
+| ⚙️ Backend | **C# / .NET 10** | REST API, use cases, and business logic |
+| 🌐 API | **ASP.NET Core Web API** | Controllers, middleware, authentication, and endpoints |
+| 🗃️ Persistence | **Entity Framework Core** | Mapping, queries, migrations, and data access |
+| 🛢️ Database | **SQL Server 2022** | Relational storage, constraints, indexes, and `rowversion` |
+| 🔐 Security | **JWT Bearer** | Authentication and role-based authorization |
+| ✅ Validation | **FluentValidation** | Request validation before executing use cases |
+| 📚 Documentation | **OpenAPI / Swagger UI** | Interactive endpoint exploration |
+| 🧩 Patterns | **Repository + Service Layer** | Separation between persistence and application logic |
+| ⚡ Performance | **Pagination, projections, AsNoTracking, cache** | Efficient read operations and reports |
+| 📝 Logging | **ILogger** | Structured logs for important operations |
+| 🧪 Unit testing | **xUnit + Moq** | Domain and application service verification |
+| 🔗 Integration testing | **WebApplicationFactory + Testcontainers** | HTTP flows with a real temporary SQL Server |
+| 🐳 Containers | **Docker + Docker Compose** | Reproducible API and database environments |
+| 🔄 Continuous Integration | **GitHub Actions** | Automated restore, build, and test execution |
 
 ---
 
-## 🧰 Stack tecnológico
+## 🏛️ Architecture
 
-<table>
-  <thead>
-    <tr>
-      <th>Área</th>
-      <th>Tecnología</th>
-      <th>Uso dentro del proyecto</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>⚙️ Backend</td>
-      <td><strong>C# / .NET 10</strong></td>
-      <td>Desarrollo de la API REST y reglas de negocio.</td>
-    </tr>
-    <tr>
-      <td>🌐 API</td>
-      <td><strong>ASP.NET Core Web API</strong></td>
-      <td>Controllers, middlewares, autenticación y endpoints.</td>
-    </tr>
-    <tr>
-      <td>🗃️ Persistencia</td>
-      <td><strong>Entity Framework Core</strong></td>
-      <td>Mapeo, consultas, migraciones y acceso a datos.</td>
-    </tr>
-    <tr>
-      <td>🛢️ Base de datos</td>
-      <td><strong>SQL Server 2022</strong></td>
-      <td>Almacenamiento relacional, índices y restricciones.</td>
-    </tr>
-    <tr>
-      <td>🔐 Seguridad</td>
-      <td><strong>JWT Bearer</strong></td>
-      <td>Autenticación y control de acceso por roles.</td>
-    </tr>
-    <tr>
-      <td>✅ Validaciones</td>
-      <td><strong>FluentValidation</strong></td>
-      <td>Validación de solicitudes antes de ejecutar casos de uso.</td>
-    </tr>
-    <tr>
-      <td>📚 Documentación</td>
-      <td><strong>OpenAPI / Swagger UI</strong></td>
-      <td>Exploración y prueba interactiva de endpoints.</td>
-    </tr>
-    <tr>
-      <td>🧩 Patrones</td>
-      <td><strong>Repository + Service Layer</strong></td>
-      <td>Separación entre acceso a datos y lógica de aplicación.</td>
-    </tr>
-    <tr>
-      <td>⚡ Rendimiento</td>
-      <td><strong>IMemoryCache</strong></td>
-      <td>Caché temporal para consultas de reportes.</td>
-    </tr>
-    <tr>
-      <td>📝 Observabilidad</td>
-      <td><strong>ILogger</strong></td>
-      <td>Logging estructurado de operaciones importantes.</td>
-    </tr>
-    <tr>
-      <td>🐳 Contenedores</td>
-      <td><strong>Docker + Docker Compose</strong></td>
-      <td>Ejecución conjunta de API y SQL Server.</td>
-    </tr>
-  </tbody>
-</table>
-
----
-
-## 🏛️ Arquitectura
-
-El proyecto utiliza **Clean Architecture** para mantener las reglas de negocio independientes de frameworks, base de datos y detalles de infraestructura.
+The solution follows **Clean Architecture**, keeping business rules independent from ASP.NET Core, Entity Framework Core, SQL Server, and infrastructure details.
 
 ```mermaid
 flowchart LR
@@ -169,44 +130,22 @@ flowchart LR
     APP --> DOMAIN
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th>Capa</th>
-      <th>Responsabilidad</th>
-      <th>Elementos principales</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>🏛️ <strong>Domain</strong></td>
-      <td>Núcleo de negocio independiente.</td>
-      <td>Entidades, invariantes, cálculos y comportamiento.</td>
-    </tr>
-    <tr>
-      <td>🧠 <strong>Application</strong></td>
-      <td>Casos de uso y contratos.</td>
-      <td>DTOs, interfaces, servicios, validadores y excepciones.</td>
-    </tr>
-    <tr>
-      <td>🗃️ <strong>Infrastructure</strong></td>
-      <td>Detalles técnicos y persistencia.</td>
-      <td>EF Core, repositorios, migraciones, JWT, caché y hashing.</td>
-    </tr>
-    <tr>
-      <td>🌐 <strong>API</strong></td>
-      <td>Exposición HTTP de la aplicación.</td>
-      <td>Controllers, Swagger, middleware y configuración.</td>
-    </tr>
-  </tbody>
-</table>
+| Layer | Responsibility | Main elements |
+|---|---|---|
+| 🏛️ **Domain** | Independent business core | Entities, invariants, calculations, and behavior |
+| 🧠 **Application** | Use cases and contracts | DTOs, interfaces, services, validators, and exceptions |
+| 🗃️ **Infrastructure** | Technical implementation | EF Core, repositories, migrations, JWT, cache, hashing, and seeders |
+| 🌐 **API** | HTTP exposure | Controllers, OpenAPI, middleware, authentication, and health checks |
 
 ---
 
-## 🗂️ Organización del código
+## 🗂️ Project structure
 
 ```text
 Consultoria/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── docker/
 │   ├── Dockerfile
 │   └── compose.yaml
@@ -215,27 +154,55 @@ Consultoria/
 │   ├── Consultoria.Application/
 │   ├── Consultoria.Domain/
 │   └── Consultoria.Infrastructure/
+├── tests/
+│   ├── Consultoria.UnitTests/
+│   └── Consultoria.IntegrationTests/
 ├── .dockerignore
 ├── .env.example
 ├── .gitignore
 ├── Consultoria.slnx
-└── README.md
+├── README.md
+└── README.es.md
+```
+
+### Dependency direction
+
+```text
+Domain
+└── No project references
+
+Application
+└── Domain
+
+Infrastructure
+├── Application
+└── Domain
+
+API
+├── Application
+└── Infrastructure
+
+IntegrationTests
+├── API
+├── Application
+└── Infrastructure
 ```
 
 ---
 
-## 🧩 Modelo de negocio
+## 🧩 Business model
 
 ```mermaid
 erDiagram
-    AREA_ESPECIALIZACION ||--o{ CONSULTOR : agrupa
-    AREA_ESPECIALIZACION ||--o{ PAQUETE_SERVICIO : clasifica
-    CONSULTOR ||--o{ PAQUETE_SERVICIO : responsable
+    AREA_ESPECIALIZACION ||--o{ CONSULTOR : groups
+    AREA_ESPECIALIZACION ||--o{ PAQUETE_SERVICIO : classifies
+    CONSULTOR ||--o{ PAQUETE_SERVICIO : responsible
 
     AREA_ESPECIALIZACION {
         int AreaEspecializacionId
         string Nombre
         bool Activo
+        rowversion RowVersion
     }
 
     CONSULTOR {
@@ -246,6 +213,7 @@ erDiagram
         string EmailCorporativo
         bool Activo
         datetime FechaIngreso
+        rowversion RowVersion
     }
 
     PAQUETE_SERVICIO {
@@ -259,6 +227,7 @@ erDiagram
         string Descripcion
         bool Activo
         datetime FechaCreacion
+        rowversion RowVersion
     }
 
     USUARIO {
@@ -274,438 +243,424 @@ erDiagram
 
 ---
 
-## 🚀 Funcionalidades principales
+## 🚀 Main features
 
-<table>
-  <thead>
-    <tr>
-      <th>Módulo</th>
-      <th>Capacidades</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>🔑 <strong>Autenticación</strong></td>
-      <td>Inicio de sesión, generación de JWT y autorización por roles.</td>
-    </tr>
-    <tr>
-      <td>🏷️ <strong>Áreas</strong></td>
-      <td>Creación, consulta, actualización y desactivación lógica.</td>
-    </tr>
-    <tr>
-      <td>👨‍💼 <strong>Consultores</strong></td>
-      <td>Gestión de perfil, área, tarifa, correo y estado.</td>
-    </tr>
-    <tr>
-      <td>📦 <strong>Paquetes</strong></td>
-      <td>Asignación automática de área y cálculo de costo.</td>
-    </tr>
-    <tr>
-      <td>📊 <strong>Reportes</strong></td>
-      <td>Paginación, filtros, ordenamiento y datos agregados.</td>
-    </tr>
-    <tr>
-      <td>🐳 <strong>Infraestructura</strong></td>
-      <td>API y SQL Server levantados como servicios independientes.</td>
-    </tr>
-  </tbody>
-</table>
+| Module | Capabilities |
+|---|---|
+| 🔑 **Authentication** | Login, JWT generation, issuer/audience validation, and role authorization |
+| 🏷️ **Specialization areas** | Create, read, update, deactivate, and reactivate |
+| 👨‍💼 **Consultants** | Profile, area, rate, corporate email, active state, and reactivation rules |
+| 📦 **Service packages** | Consultant assignment, automatic area and rate selection, cost calculation, and historical rate storage |
+| 📊 **Reports** | Pagination, optional filters, sorting, aggregates, and temporary caching |
+| 🔄 **Concurrency** | Protection against lost updates through SQL Server `rowversion` |
+| ❤️ **Health checks** | Separate liveness and readiness endpoints |
+| 🧪 **Testing** | Unit and integration tests with an isolated real database |
+| 🐳 **Infrastructure** | API and SQL Server as independent containers |
+| ⚙️ **CI** | Automatic validation on every push and pull request |
 
 ---
 
-## 🧠 Reglas de negocio destacadas
+## 🧠 Important business rules
 
-### 👨‍💼 Consultores
+### 👨‍💼 Consultants
 
-- El correo corporativo debe ser único.
-- No se permite repetir la combinación de nombre y área.
-- La tarifa por hora se valida dentro del rango permitido.
-- El área asignada debe existir y encontrarse activa.
-- La eliminación se maneja de manera lógica mediante la propiedad `Activo`.
+- Corporate email must be unique.
+- The assigned specialization area must exist and be active.
+- The hourly rate must be within the configured valid range.
+- Records are deactivated logically instead of being physically deleted.
+- An inactive consultant can only be reactivated when the assigned area is active.
 
-### 📦 Paquetes de servicio
+### 📦 Service packages
 
-El cliente proporciona únicamente los datos necesarios:
+The client sends only the editable business data:
 
 ```json
 {
-  "nombre": "Administración financiera para microempresas",
+  "nombre": "Financial administration for small businesses",
   "consultorId": 2,
   "duracionHoras": 10,
-  "descripcion": "Taller de buenas prácticas financieras."
+  "descripcion": "Financial best-practices workshop."
 }
 ```
 
-El backend determina automáticamente:
+The backend determines:
 
-<table>
-  <tr>
-    <td>🏷️ Área</td>
-    <td>Se obtiene desde el consultor seleccionado.</td>
-  </tr>
-  <tr>
-    <td>💵 Tarifa aplicada</td>
-    <td>Se obtiene desde la tarifa actual del consultor.</td>
-  </tr>
-  <tr>
-    <td>🧮 Costo</td>
-    <td>Se calcula multiplicando duración por tarifa.</td>
-  </tr>
-</table>
+| Value | Rule |
+|---|---|
+| 🏷️ Area | Obtained from the selected consultant |
+| 💵 Applied rate | Obtained from the consultant's current rate |
+| 🧮 Cost | Calculated as duration multiplied by applied rate |
 
 ```text
-Costo = DuracionHoras × TarifaHoraAplicada
+Cost = DurationHours × AppliedHourlyRate
 ```
 
-Ejemplo real:
+`TarifaHoraAplicada` is stored in the package to preserve the historical rate even if the consultant's current rate changes later.
 
-```text
-10 horas × $45 = $450
-```
-
-La tarifa utilizada queda almacenada en `TarifaHoraAplicada`, preservando el valor histórico del paquete aunque la tarifa del consultor cambie posteriormente.
+A package can only be reactivated when its consultant and related area are active and consistent.
 
 ---
 
-## 🔐 Seguridad y autorización
+## 🔄 Optimistic concurrency
 
-<table>
-  <thead>
-    <tr>
-      <th>Rol</th>
-      <th>Permisos principales</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>🛡️ <strong>Admin</strong></td>
-      <td>Consulta y administración de áreas, consultores y paquetes.</td>
-    </tr>
-    <tr>
-      <td>👤 <strong>User</strong></td>
-      <td>Consulta de información y reportes.</td>
-    </tr>
-  </tbody>
-</table>
+The update DTOs include a `RowVersion` received from the previous GET response.
 
-La API utiliza:
+```text
+GET resource
+→ receive RowVersion V1
+→ another user updates the same row
+→ SQL Server generates V2
+→ PUT with V1
+→ 409 Conflict
+```
 
-- Tokens JWT firmados.
-- Validación de emisor y audiencia.
-- Expiración configurable.
-- Claims de identidad y rol.
-- Contraseñas almacenadas mediante hash.
-- Respuestas `401 Unauthorized` y `403 Forbidden` según el caso.
+This prevents one user from silently overwriting another user's changes.
 
 ---
 
-## 🌐 Endpoints principales
+## 🔐 Security and authorization
+
+| Role | Main permissions |
+|---|---|
+| 🛡️ **Admin** | Read and manage areas, consultants, and packages |
+| 👤 **User** | Read information and reports |
+
+Security capabilities:
+
+- Signed JWT access tokens.
+- Issuer and audience validation.
+- Configurable expiration.
+- Identity and role claims.
+- Hashed passwords.
+- `401 Unauthorized` for missing or invalid authentication.
+- `403 Forbidden` for authenticated users without required permissions.
+- Environment variables and user secrets for sensitive configuration.
+
+---
+
+## 🌐 Main endpoints
 
 <details>
-<summary><strong>🔑 Autenticación</strong></summary>
+<summary><strong>🔑 Authentication</strong></summary>
 
-<br>
-
-| Método | Endpoint | Acceso |
+| Method | Endpoint | Access |
 |---|---|---|
-| `POST` | `/api/v1/auth/login` | Público |
+| `POST` | `/api/v1/auth/login` | Public |
 
 </details>
 
 <details>
-<summary><strong>🏷️ Áreas de especialización</strong></summary>
+<summary><strong>🏷️ Specialization areas</strong></summary>
 
-<br>
-
-| Método | Endpoint | Acceso |
+| Method | Endpoint | Access |
 |---|---|---|
 | `POST` | `/api/v1/areas-especializacion` | Admin |
 | `GET` | `/api/v1/areas-especializacion` | Admin / User |
 | `GET` | `/api/v1/areas-especializacion/{id}` | Admin / User |
 | `PUT` | `/api/v1/areas-especializacion/{id}` | Admin |
 | `DELETE` | `/api/v1/areas-especializacion/{id}` | Admin |
+| `PATCH` | `/api/v1/areas-especializacion/{id}/activar` | Admin |
 
 </details>
 
 <details>
-<summary><strong>👨‍💼 Consultores</strong></summary>
+<summary><strong>👨‍💼 Consultants</strong></summary>
 
-<br>
-
-| Método | Endpoint | Acceso |
+| Method | Endpoint | Access |
 |---|---|---|
 | `POST` | `/api/v1/consultores` | Admin |
 | `GET` | `/api/v1/consultores` | Admin / User |
 | `GET` | `/api/v1/consultores/{id}` | Admin / User |
 | `PUT` | `/api/v1/consultores/{id}` | Admin |
 | `DELETE` | `/api/v1/consultores/{id}` | Admin |
+| `PATCH` | `/api/v1/consultores/{id}/activar` | Admin |
 
 </details>
 
 <details>
-<summary><strong>📦 Paquetes</strong></summary>
+<summary><strong>📦 Service packages</strong></summary>
 
-<br>
-
-| Método | Endpoint | Acceso |
+| Method | Endpoint | Access |
 |---|---|---|
 | `POST` | `/api/v1/paquetes` | Admin |
 | `GET` | `/api/v1/paquetes` | Admin / User |
 | `GET` | `/api/v1/paquetes/{id}` | Admin / User |
 | `PUT` | `/api/v1/paquetes/{id}` | Admin |
 | `DELETE` | `/api/v1/paquetes/{id}` | Admin |
+| `PATCH` | `/api/v1/paquetes/{id}/activar` | Admin |
 
 </details>
 
 <details>
-<summary><strong>📊 Reportes</strong></summary>
+<summary><strong>📊 Reports</strong></summary>
 
-<br>
-
-| Método | Endpoint | Acceso |
+| Method | Endpoint | Access |
 |---|---|---|
 | `GET` | `/api/v1/reportes/paquetes-por-area` | Admin / User |
 | `GET` | `/api/v1/reportes/consultores-top-facturacion` | Admin / User |
 
 </details>
 
----
-
-## 📊 Reportes disponibles
-
-<table>
-  <thead>
-    <tr>
-      <th>Reporte</th>
-      <th>Información presentada</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>📦 Paquetes por área</td>
-      <td>Cantidad de paquetes, horas, costo total y costo promedio por área.</td>
-    </tr>
-    <tr>
-      <td>🏆 Consultores por facturación</td>
-      <td>Paquetes, horas trabajadas y total facturado por consultor.</td>
-    </tr>
-  </tbody>
-</table>
-
-Los reportes incluyen:
-
-- Paginación.
-- Filtros opcionales.
-- Ordenamiento ascendente y descendente.
-- Caché temporal para reducir consultas repetidas.
-
----
-
-## 📬 Contrato de respuestas
-
-### Respuesta exitosa
-
-```json
-{
-  "success": true,
-  "message": "Operación realizada correctamente.",
-  "data": {}
-}
-```
-
-### Manejo de errores
-
-Los errores se procesan mediante un middleware global y utilizan `ProblemDetails`.
-
-<table>
-  <thead>
-    <tr>
-      <th>Código</th>
-      <th>Uso</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td><code>200</code></td><td>Operación exitosa.</td></tr>
-    <tr><td><code>201</code></td><td>Recurso creado.</td></tr>
-    <tr><td><code>400</code></td><td>Solicitud o validación incorrecta.</td></tr>
-    <tr><td><code>401</code></td><td>Credenciales inválidas o token ausente.</td></tr>
-    <tr><td><code>403</code></td><td>Usuario autenticado sin permisos.</td></tr>
-    <tr><td><code>404</code></td><td>Recurso no encontrado.</td></tr>
-    <tr><td><code>409</code></td><td>Conflicto o registro duplicado.</td></tr>
-    <tr><td><code>422</code></td><td>Regla de negocio no cumplida.</td></tr>
-    <tr><td><code>500</code></td><td>Error inesperado.</td></tr>
-  </tbody>
-</table>
-
----
-
-## 🐳 Contenedores e infraestructura
-
-El entorno está dividido en dos servicios:
-
-```mermaid
-flowchart LR
-    USER["👤 Cliente / Swagger"] --> API["🌐 Consultoria API<br/>Puerto 8080"]
-    API --> DB["🛢️ SQL Server 2022<br/>Puerto interno 1433"]
-    DB --> VOLUME["💾 Volumen persistente"]
-```
-
-<table>
-  <thead>
-    <tr>
-      <th>Servicio</th>
-      <th>Responsabilidad</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>🌐 <strong>consultoria-api</strong></td>
-      <td>Ejecuta la aplicación ASP.NET Core.</td>
-    </tr>
-    <tr>
-      <td>🛢️ <strong>consultoria-sqlserver</strong></td>
-      <td>Ejecuta SQL Server 2022 en un contenedor independiente.</td>
-    </tr>
-    <tr>
-      <td>💾 <strong>consultoria_sql_data</strong></td>
-      <td>Conserva los datos aunque los contenedores sean recreados.</td>
-    </tr>
-  </tbody>
-</table>
-
-El Dockerfile utiliza compilación en múltiples etapas para separar el SDK de compilación del runtime final y ejecutar la aplicación con una imagen más pequeña.
-
----
-### ▶️ Ejecución rápida con Docker Compose
-
 <details>
-<summary><strong>Ver guía para levantar el proyecto</strong></summary>
+<summary><strong>❤️ Health checks</strong></summary>
 
-<br>
-
-#### Requisitos
-
-- Docker Desktop o Docker Engine.
-- Docker Compose.
-- Git.
-
-#### 1. Clonar el repositorio
-
-```bash
-git clone <URL_DEL_REPOSITORIO>
-cd Consultoria
-```
-
-#### 2. Crear el archivo de variables de entorno
-
-En PowerShell:
-
-```powershell
-Copy-Item .env.example .env
-```
-
-En Linux, macOS o Git Bash:
-
-```bash
-cp .env.example .env
-```
-
-Después se deben completar en `.env` las variables requeridas para SQL Server, JWT y usuarios de demostración.
-
-#### 3. Validar la configuración
-
-```bash
-docker compose --env-file .env -f docker/compose.yaml config
-```
-
-#### 4. Construir y levantar los servicios
-
-```bash
-docker compose --env-file .env -f docker/compose.yaml up -d --build
-```
-
-Este comando construye la API, inicia SQL Server, crea el volumen persistente y levanta ambos servicios.
-
-#### 5. Comprobar el estado
-
-```bash
-docker compose --env-file .env -f docker/compose.yaml ps -a
-```
-
-El resultado esperado es:
-
-```text
-consultoria-api         Up
-consultoria-sqlserver   Up (healthy)
-```
-
-#### 6. Abrir la documentación
-
-```text
-http://localhost:8080/swagger
-```
-
-#### Comandos útiles
-
-<table>
-  <thead>
-    <tr>
-      <th>Acción</th>
-      <th>Comando</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>📋 Ver logs de la API</td>
-      <td><code>docker compose --env-file .env -f docker/compose.yaml logs -f api</code></td>
-    </tr>
-    <tr>
-      <td>⏹️ Detener sin borrar datos</td>
-      <td><code>docker compose --env-file .env -f docker/compose.yaml down</code></td>
-    </tr>
-    <tr>
-      <td>▶️ Volver a levantar sin reconstruir</td>
-      <td><code>docker compose --env-file .env -f docker/compose.yaml up -d</code></td>
-    </tr>
-    <tr>
-      <td>🔨 Reconstruir únicamente la API</td>
-      <td><code>docker compose --env-file .env -f docker/compose.yaml up -d --build api</code></td>
-    </tr>
-  </tbody>
-</table>
-
-> Los datos de SQL Server se conservan mediante el volumen `consultoria_sql_data` aunque los contenedores sean detenidos o recreados.
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/health/live` | Confirms that the API process is alive |
+| `GET` | `/health/ready` | Confirms that the API and SQL Server are ready |
 
 </details>
 
 ---
 
-## 🛡️ Buenas prácticas implementadas
+## 📬 Response contract
+
+### Successful response
+
+```json
+{
+  "success": true,
+  "message": "Operation completed successfully.",
+  "data": {}
+}
+```
+
+### Error handling
+
+Errors are processed globally and returned using `ProblemDetails`.
+
+| Code | Usage |
+|---|---|
+| `200` | Successful operation |
+| `201` | Resource created |
+| `400` | Invalid request or validation error |
+| `401` | Invalid credentials or missing token |
+| `403` | Authenticated user without permission |
+| `404` | Resource not found |
+| `409` | Duplicate data or optimistic concurrency conflict |
+| `422` | Business rule violation |
+| `500` | Unexpected error |
+
+---
+
+## 🧪 Automated testing
+
+### Unit tests
+
+The unit test project verifies domain entity behavior, business rules, duplicate validation, cost calculation, activation and deactivation, repository interactions, and authentication flows.
+
+### Integration tests
+
+Integration tests run the complete HTTP pipeline through `WebApplicationFactory`.
+
+Testcontainers starts a temporary SQL Server container, applies EF Core migrations, executes seeders, runs the tests, and removes the container afterward.
+
+Covered flows include:
+
+- Missing JWT returns `401`.
+- Invalid login returns `401`.
+- Valid login generates a token.
+- User role cannot execute Admin operations and receives `403`.
+- Main business flow: create area, consultant, and package.
+- Health endpoints return `Healthy`.
+- An outdated `RowVersion` returns `409 Conflict`.
+
+```text
+dotnet test
+```
+
+The Testing database is isolated from the Development database.
+
+---
+
+## 🔄 Continuous Integration
+
+The workflow is located at:
+
+```text
+.github/workflows/ci.yml
+```
+
+Every push and pull request executes:
+
+```text
+Restore dependencies
+→ Build in Release
+→ Run unit tests
+→ Start temporary SQL Server with Testcontainers
+→ Run integration tests
+→ Upload TRX test results
+```
+
+---
+
+## 🐳 Containers and environments
+
+```mermaid
+flowchart LR
+    USER["👤 Client / Swagger"] --> API["🌐 Consultoria API<br/>Port 8080"]
+    API --> DB["🛢️ SQL Server 2022<br/>Internal port 1433"]
+    DB --> VOLUME["💾 Persistent volume"]
+```
+
+| Service | Responsibility |
+|---|---|
+| 🌐 **consultoria-api** | Runs the ASP.NET Core application |
+| 🛢️ **consultoria-sqlserver** | Runs SQL Server 2022 |
+| 💾 **consultoria_sql_data** | Preserves Development data between container recreations |
+
+The Dockerfile uses a multi-stage build and executes the final application with a non-root user.
+
+### Environments
+
+```text
+Development
+└── API + persistent SQL Server through Docker Compose
+
+Testing
+└── API hosted by WebApplicationFactory
+    └── Temporary SQL Server through Testcontainers
+```
+
+---
+
+## ▶️ Quick start with Docker Compose
+
+<details>
+<summary><strong>Open setup instructions</strong></summary>
+
+### Requirements
+
+- Docker Desktop or Docker Engine.
+- Docker Compose.
+- Git.
+
+### 1. Clone the repository
+
+```bash
+git clone <REPOSITORY_URL>
+cd Consultoria
+```
+
+### 2. Create the environment file
+
+PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+Linux, macOS, or Git Bash:
+
+```bash
+cp .env.example .env
+```
+
+Complete the required SQL Server, JWT, and demo user variables.
+
+### 3. Validate the Compose configuration
+
+```bash
+docker compose --env-file .env -f docker/compose.yaml config
+```
+
+### 4. Build and start
+
+```bash
+docker compose --env-file .env -f docker/compose.yaml up -d --build
+```
+
+### 5. Check status
+
+```bash
+docker compose --env-file .env -f docker/compose.yaml ps
+```
+
+Expected:
+
+```text
+consultoria-api         Up (healthy)
+consultoria-sqlserver   Up (healthy)
+```
+
+### 6. Open Swagger
+
+```text
+http://localhost:8080/swagger
+```
+
+### Useful commands
+
+| Action | Command |
+|---|---|
+| View API logs | `docker compose --env-file .env -f docker/compose.yaml logs -f api` |
+| Stop without deleting data | `docker compose --env-file .env -f docker/compose.yaml down` |
+| Start without rebuilding | `docker compose --env-file .env -f docker/compose.yaml up -d` |
+| Rebuild only the API | `docker compose --env-file .env -f docker/compose.yaml up -d --build api` |
+| Delete containers and persistent data | `docker compose --env-file .env -f docker/compose.yaml down -v` |
+
+</details>
+
+---
+
+## 🌱 Seed data
+
+The Development and Testing environments can create initial data through an idempotent seeder:
+
+- Demo Admin user.
+- Demo User account.
+- Specialization areas.
+- Consultants.
+- Service packages.
+
+The seeder checks existing values before inserting, preventing duplicate records across application restarts.
+
+> Demo passwords are configured through environment variables or test configuration and are not stored in the repository.
+
+---
+
+## ⚡ Performance-conscious data access
+
+Implemented practices include:
+
+- SQL-level pagination with `Skip` and `Take`.
+- `AsNoTracking` for read-only queries.
+- Direct projection from EF Core queries to DTOs.
+- `CancellationToken` propagation.
+- Temporary cache for repeated report queries.
+- Unique indexes and relational constraints.
+- Tracked entity queries only when an update will follow.
+
+---
+
+## 🛡️ Engineering practices
 
 <table>
   <tr>
-    <td width="50%">
+    <td width="50%" valign="top">
       <ul>
         <li>✅ Clean Architecture</li>
-        <li>✅ Inyección de dependencias</li>
+        <li>✅ Dependency injection</li>
         <li>✅ Repository Pattern</li>
         <li>✅ Service Layer</li>
-        <li>✅ DTOs para entrada y salida</li>
-        <li>✅ Entidades con estado encapsulado</li>
-        <li>✅ Validaciones con FluentValidation</li>
-        <li>✅ Eliminación lógica</li>
+        <li>✅ DTOs for input and output</li>
+        <li>✅ Encapsulated domain entities</li>
+        <li>✅ FluentValidation</li>
+        <li>✅ Logical deletion and reactivation</li>
+        <li>✅ Optimistic concurrency</li>
       </ul>
     </td>
-    <td width="50%">
+    <td width="50%" valign="top">
       <ul>
-        <li>✅ JWT y autorización por roles</li>
-        <li>✅ Manejo global de excepciones</li>
-        <li>✅ Logging estructurado</li>
-        <li>✅ Consultas con AsNoTracking</li>
-        <li>✅ Proyecciones directas a DTOs</li>
-        <li>✅ Migraciones con EF Core</li>
-        <li>✅ Variables de entorno</li>
-        <li>✅ Persistencia mediante volúmenes</li>
+        <li>✅ JWT and role authorization</li>
+        <li>✅ Global exception handling</li>
+        <li>✅ Structured logging</li>
+        <li>✅ EF Core migrations and seeders</li>
+        <li>✅ Unit and integration tests</li>
+        <li>✅ Testcontainers database isolation</li>
+        <li>✅ Health checks</li>
+        <li>✅ Docker Compose</li>
+        <li>✅ GitHub Actions CI</li>
       </ul>
     </td>
   </tr>
@@ -713,114 +668,75 @@ http://localhost:8080/swagger
 
 ---
 
-## 🧭 Decisiones técnicas relevantes
+## 🧭 Relevant technical decisions
 
 <details>
-<summary><strong>¿Por qué Clean Architecture?</strong></summary>
+<summary><strong>Why Clean Architecture?</strong></summary>
 
-<br>
-
-Para mantener el dominio independiente de ASP.NET Core, Entity Framework Core y SQL Server. Esto facilita el mantenimiento, las pruebas y la sustitución de detalles técnicos.
+To keep the business domain independent from ASP.NET Core, Entity Framework Core, and SQL Server.
 
 </details>
 
 <details>
-<summary><strong>¿Por qué guardar TarifaHoraAplicada?</strong></summary>
+<summary><strong>Why store TarifaHoraAplicada?</strong></summary>
 
-<br>
-
-Porque la tarifa del consultor puede cambiar en el futuro. Guardar la tarifa utilizada evita modificar el valor histórico de paquetes ya creados.
+A consultant's rate can change in the future. Storing the applied rate preserves the historical cost of an already-created package.
 
 </details>
 
 <details>
-<summary><strong>¿Por qué calcular el costo en el backend?</strong></summary>
+<summary><strong>Why optimistic concurrency?</strong></summary>
 
-<br>
-
-Para evitar valores manipulados o inconsistentes enviados por el cliente. El backend es la fuente de verdad de las reglas de negocio.
+It prevents lost updates without locking records while users are editing them. Conflicts are detected only when an outdated version is submitted.
 
 </details>
 
 <details>
-<summary><strong>¿Por qué usar eliminación lógica?</strong></summary>
+<summary><strong>Why Testcontainers?</strong></summary>
 
-<br>
-
-Para conservar trazabilidad y evitar eliminar información que puede estar relacionada con reportes o registros históricos.
+Integration tests run against a real SQL Server without modifying the Development database.
 
 </details>
 
 <details>
-<summary><strong>¿Por qué Docker Compose?</strong></summary>
+<summary><strong>Why Docker Compose?</strong></summary>
 
-<br>
-
-Para levantar la API y la base de datos de forma reproducible, manteniendo cada servicio aislado y conservando la información mediante volúmenes.
+It provides a reproducible Development environment with an isolated API, SQL Server service, startup health checks, and persistent storage.
 
 </details>
 
 ---
 
-## 🗺️ Evolución del proyecto
+## 🗺️ Technical milestones
 
-<table>
-  <thead>
-    <tr>
-      <th>Versión</th>
-      <th>Objetivo</th>
-      <th>Estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>0.1.0</code></td>
-      <td>API, autenticación, CRUD, reportes, SQL Server y Docker Compose.</td>
-      <td>✅ Implementado</td>
-    </tr>
-    <tr>
-      <td><code>0.2.0</code></td>
-      <td>Reactivación de registros desactivados.</td>
-      <td>🟡 Planificado</td>
-    </tr>
-    <tr>
-      <td><code>0.3.0</code></td>
-      <td>Actualizaciones parciales mediante PATCH.</td>
-      <td>🟡 Planificado</td>
-    </tr>
-    <tr>
-      <td><code>0.4.0</code></td>
-      <td>Pruebas unitarias y de integración.</td>
-      <td>🟡 Planificado</td>
-    </tr>
-    <tr>
-      <td><code>1.0.0</code></td>
-      <td>Primera versión estable.</td>
-      <td>⚪ Futuro</td>
-    </tr>
-  </tbody>
-</table>
+| Milestone | Scope | Status |
+|---|---|---|
+| Foundation | API, Clean Architecture, authentication, CRUD, reports, SQL Server | ✅ Implemented |
+| Business rules | Derived package area/rate, cost calculation, logical deletion | ✅ Implemented |
+| Recovery flows | Reactivation of areas, consultants, and packages | ✅ Implemented |
+| Quality | Unit tests, integration tests, and Testcontainers | ✅ Implemented |
+| Operations | Docker Compose, health checks, and GitHub Actions CI | ✅ Implemented |
+| Data consistency | Optimistic concurrency with `RowVersion` | ✅ Implemented |
+| Observability | Correlation ID, distributed traces, and metrics | 🟡 Planned |
+| User interface | Administrative frontend | ⚪ Future |
 
 ---
 
-## 🔭 Próximas mejoras
+## 🔭 Planned improvements
 
-- 🔄 Reactivación de áreas, consultores y paquetes.
-- 🩹 Actualizaciones parciales mediante `PATCH`.
-- 🧪 Pruebas unitarias con xUnit.
-- 🔗 Pruebas de integración para endpoints y autenticación.
-- 📊 Mejoras en la documentación y filtros de reportes.
-- ⚙️ CI/CD mediante GitHub Actions.
-- ❤️ Health checks de API y base de datos.
-- 🖥️ Interfaz administrativa.
+- 🔎 Correlation ID for request tracing.
+- 📈 OpenTelemetry metrics and traces.
+- 🖥️ Administrative web interface.
 - 🔐 Refresh tokens.
-- 📦 Publicación de imágenes en un registro Docker.
+- 📦 Docker image publication.
+- 🚀 Production deployment pipeline.
+- 📊 Additional performance analysis with production-like data volumes.
 
 ---
 
 <div align="center">
 
-## 👨‍💻 Autor
+## 👨‍💻 Author
 
 ### Diego Esaú Hernández
 
@@ -830,6 +746,6 @@ Para levantar la API y la base de datos de forma reproducible, manteniendo cada 
 
 <br>
 
-<em>Proyecto desarrollado como parte de mi portafolio profesional para demostrar conocimientos en backend empresarial, arquitectura, seguridad, persistencia y contenedores.</em>
+<em>Portfolio project created to demonstrate enterprise backend development, architecture, security, testing, database consistency, containerization, and continuous integration.</em>
 
 </div>
