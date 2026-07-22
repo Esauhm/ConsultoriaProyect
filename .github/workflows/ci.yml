@@ -24,7 +24,7 @@ jobs:
 
     steps:
       # ------------------------------------------------------
-      # Descargar el código del repositorios
+      # Descargar el código del repositorio
       # ------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v6
