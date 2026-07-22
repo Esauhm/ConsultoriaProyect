@@ -196,20 +196,31 @@ namespace Consultoria.UnitTests.Application.Services
             // Arrange
             const int areaId = 3;
 
-            var request = new ActualizarAreaEspecializacionDto
-            {
-                Nombre = "  Seguridad   Informática "
-            };
+            byte[] rowVersion =
+                [1, 2, 3, 4, 5, 6, 7, 8];
 
-            var area = new AreaEspecializacion(
-                "Ciberseguridad");
+            byte[] rowVersionActualizado =
+                [9, 10, 11, 12, 13, 14, 15, 16];
 
-            var areaEsperada = new AreaEspecializacionDto
-            {
-                AreaEspecializacionId = areaId,
-                Nombre = "Seguridad Informática",
-                Activo = true
-            };
+            var request =
+                new ActualizarAreaEspecializacionDto
+                {
+                    Nombre = "  Seguridad   Informática ",
+                    RowVersion = rowVersion
+                };
+
+            var area =
+                new AreaEspecializacion(
+                    "Ciberseguridad");
+
+            var areaEsperada =
+                new AreaEspecializacionDto
+                {
+                    AreaEspecializacionId = areaId,
+                    Nombre = "Seguridad Informática",
+                    Activo = true,
+                    RowVersion = rowVersionActualizado
+                };
 
             _repositoryMock
                 .Setup(repository =>
@@ -225,6 +236,14 @@ namespace Consultoria.UnitTests.Application.Services
                         areaId,
                         It.IsAny<CancellationToken>()))
                 .ReturnsAsync(false);
+
+            _repositoryMock
+                .Setup(repository =>
+                    repository.ActualizarAsync(
+                        area,
+                        rowVersion,
+                        It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
 
             _repositoryMock
                 .Setup(repository =>
@@ -248,12 +267,24 @@ namespace Consultoria.UnitTests.Application.Services
                 "Seguridad Informática",
                 resultado.Nombre);
 
+            Assert.Equal(
+                rowVersionActualizado,
+                resultado.RowVersion);
+
+            _repositoryMock.Verify(
+                repository =>
+                    repository.ActualizarAsync(
+                        area,
+                        rowVersion,
+                        It.IsAny<CancellationToken>()),
+                Times.Once);
+
             _repositoryMock.Verify(
                 repository =>
                     repository.ActualizarAsync(
                         area,
                         It.IsAny<CancellationToken>()),
-                Times.Once);
+                Times.Never);
         }
 
         [Fact]

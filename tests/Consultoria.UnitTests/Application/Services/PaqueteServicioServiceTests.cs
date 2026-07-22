@@ -5,18 +5,24 @@ using Consultoria.Application.Services;
 using Consultoria.Domain.Entities;
 using Microsoft.Extensions.Logging;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Xunit;
 
 namespace Consultoria.UnitTests.Application.Services
 {
     public sealed class PaqueteServicioServiceTests
     {
-        private readonly Mock<IPaqueteServicioRepository> _paqueteRepositoryMock;
-        private readonly Mock<IConsultorRepository> _consultorRepositoryMock;
-        private readonly Mock<IAreaEspecializacionRepository> _areaRepositoryMock;
-        private readonly Mock<ILogger<PaqueteServicioService>> _loggerMock;
+        private readonly Mock<IPaqueteServicioRepository>
+            _paqueteRepositoryMock;
+
+        private readonly Mock<IConsultorRepository>
+            _consultorRepositoryMock;
+
+        private readonly Mock<IAreaEspecializacionRepository>
+            _areaRepositoryMock;
+
+        private readonly Mock<ILogger<PaqueteServicioService>>
+            _loggerMock;
+
         private readonly PaqueteServicioService _service;
 
         public PaqueteServicioServiceTests()
@@ -279,13 +285,20 @@ namespace Consultoria.UnitTests.Application.Services
             // Arrange
             const int paqueteId = 15;
 
+            byte[] rowVersion =
+                [1, 2, 3, 4, 5, 6, 7, 8];
+
+            byte[] rowVersionActualizado =
+                [9, 10, 11, 12, 13, 14, 15, 16];
+
             var request = new ActualizarPaqueteServicioDto
             {
                 Nombre = "Arquitectura empresarial",
                 ConsultorId = 5,
                 DuracionHoras = 8,
                 Descripcion =
-                    "Diseño de una arquitectura empresarial."
+                    "Diseño de una arquitectura empresarial.",
+                RowVersion = rowVersion
             };
 
             var paqueteExistente = new PaqueteServicio(
@@ -314,7 +327,8 @@ namespace Consultoria.UnitTests.Application.Services
                 Costo = 480m,
                 Descripcion =
                     "Diseño de una arquitectura empresarial.",
-                Activo = true
+                Activo = true,
+                RowVersion = rowVersionActualizado
             };
 
             _paqueteRepositoryMock
@@ -342,9 +356,13 @@ namespace Consultoria.UnitTests.Application.Services
                 .Setup(repository =>
                     repository.ActualizarAsync(
                         It.IsAny<PaqueteServicio>(),
+                        rowVersion,
                         It.IsAny<CancellationToken>()))
-                .Callback<PaqueteServicio, CancellationToken>(
-                    (paquete, _) =>
+                .Callback<
+                    PaqueteServicio,
+                    byte[],
+                    CancellationToken>(
+                    (paquete, _, _) =>
                     {
                         paqueteActualizado = paquete;
                     })
@@ -386,12 +404,24 @@ namespace Consultoria.UnitTests.Application.Services
                 480m,
                 resultado.Costo);
 
+            Assert.Equal(
+                rowVersionActualizado,
+                resultado.RowVersion);
+
+            _paqueteRepositoryMock.Verify(
+                repository =>
+                    repository.ActualizarAsync(
+                        It.IsAny<PaqueteServicio>(),
+                        rowVersion,
+                        It.IsAny<CancellationToken>()),
+                Times.Once);
+
             _paqueteRepositoryMock.Verify(
                 repository =>
                     repository.ActualizarAsync(
                         It.IsAny<PaqueteServicio>(),
                         It.IsAny<CancellationToken>()),
-                Times.Once);
+                Times.Never);
         }
 
         [Fact]
@@ -439,35 +469,6 @@ namespace Consultoria.UnitTests.Application.Services
                 Times.Never);
         }
 
-        private static CrearPaqueteServicioDto CrearRequestValido()
-        {
-            return new CrearPaqueteServicioDto
-            {
-                Nombre = "Administración financiera",
-                ConsultorId = 2,
-                DuracionHoras = 10,
-                Descripcion =
-                    "Taller de buenas prácticas financieras."
-            };
-        }
-
-        private static Consultor CrearConsultor(
-            int consultorId,
-            int areaEspecializacionId,
-            decimal tarifaHora,
-            bool activo = true)
-        {
-            return Consultor.Reconstruir(
-                consultorId: consultorId,
-                nombre: "Juan Gómez",
-                areaEspecializacionId: areaEspecializacionId,
-                tarifaHora: tarifaHora,
-                emailCorporativo:
-                    $"consultor{consultorId}@consultoria.com",
-                activo: activo,
-                fechaIngreso: DateTime.UtcNow);
-        }
-
         [Fact]
         public async Task ActivarAsync_DebeActivarPaquete_CuandoRelacionesEstanActivas()
         {
@@ -492,7 +493,8 @@ namespace Consultoria.UnitTests.Application.Services
                     nombre: "Juan Gómez",
                     areaEspecializacionId: areaId,
                     tarifaHora: 50m,
-                    emailCorporativo: "juan.gomez@consultoria.com",
+                    emailCorporativo:
+                        "juan.gomez@consultoria.com",
                     activo: true,
                     fechaIngreso: DateTime.UtcNow);
 
@@ -533,6 +535,13 @@ namespace Consultoria.UnitTests.Application.Services
 
             _paqueteRepositoryMock
                 .Setup(repository =>
+                    repository.ActualizarAsync(
+                        paquete,
+                        It.IsAny<CancellationToken>()))
+                .Returns(Task.CompletedTask);
+
+            _paqueteRepositoryMock
+                .Setup(repository =>
                     repository.ObtenerPorIdAsync(
                         paqueteId,
                         It.IsAny<CancellationToken>()))
@@ -552,6 +561,14 @@ namespace Consultoria.UnitTests.Application.Services
                         paquete,
                         It.IsAny<CancellationToken>()),
                 Times.Once);
+
+            _paqueteRepositoryMock.Verify(
+                repository =>
+                    repository.ActualizarAsync(
+                        paquete,
+                        It.IsAny<byte[]>(),
+                        It.IsAny<CancellationToken>()),
+                Times.Never);
         }
 
         [Fact]
@@ -578,7 +595,8 @@ namespace Consultoria.UnitTests.Application.Services
                     nombre: "Juan Gómez",
                     areaEspecializacionId: areaId,
                     tarifaHora: 50m,
-                    emailCorporativo: "juan.gomez@consultoria.com",
+                    emailCorporativo:
+                        "juan.gomez@consultoria.com",
                     activo: false,
                     fechaIngreso: DateTime.UtcNow);
 
@@ -617,6 +635,44 @@ namespace Consultoria.UnitTests.Application.Services
                         It.IsAny<PaqueteServicio>(),
                         It.IsAny<CancellationToken>()),
                 Times.Never);
+
+            _paqueteRepositoryMock.Verify(
+                repository =>
+                    repository.ActualizarAsync(
+                        It.IsAny<PaqueteServicio>(),
+                        It.IsAny<byte[]>(),
+                        It.IsAny<CancellationToken>()),
+                Times.Never);
+        }
+
+        private static CrearPaqueteServicioDto CrearRequestValido()
+        {
+            return new CrearPaqueteServicioDto
+            {
+                Nombre = "Administración financiera",
+                ConsultorId = 2,
+                DuracionHoras = 10,
+                Descripcion =
+                    "Taller de buenas prácticas financieras."
+            };
+        }
+
+        private static Consultor CrearConsultor(
+            int consultorId,
+            int areaEspecializacionId,
+            decimal tarifaHora,
+            bool activo = true)
+        {
+            return Consultor.Reconstruir(
+                consultorId: consultorId,
+                nombre: "Juan Gómez",
+                areaEspecializacionId:
+                    areaEspecializacionId,
+                tarifaHora: tarifaHora,
+                emailCorporativo:
+                    $"consultor{consultorId}@consultoria.com",
+                activo: activo,
+                fechaIngreso: DateTime.UtcNow);
         }
     }
 }
